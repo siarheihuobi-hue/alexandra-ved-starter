@@ -383,10 +383,21 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   50% { box-shadow: 0 8px 36px rgba(240,192,64,.65), 0 0 50px rgba(240,192,64,.2); transform: scale(1.03); }
 }
 .hero-cta-note {
-  margin-top: 18px;
-  font-size: 15px;
-  color: rgba(255,255,255,.35);
-  line-height: 1.6;
+  margin-top: 14px;
+  margin-right: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.5;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.hero-tg-icon {
+  width: 18px; height: 18px;
+  fill: #2AABEE;
+  flex-shrink: 0;
 }
 .hero-cta-note a { color: rgba(255,255,255,.55); text-decoration: underline; }
 .hero-cta-note a:hover { color: rgba(255,255,255,.9); }
@@ -750,44 +761,63 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 }
 .case-niche strong { color: hsl(var(--text)); }
 
-/* ── QUOTES ── */
-.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
-.quote-card {
-  background: rgba(255,255,255,0.06);
+/* ── QUOTES SLIDER ── */
+.reviews-slider { position: relative; max-width: 600px; margin: 0 auto 32px; }
+.reviews-track {
+  display: flex;
+  overflow: hidden;
   border-radius: 16px;
-  padding: 28px;
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  position: relative;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
 }
-.quote-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255,255,255,0.3);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+.review-slide {
+  min-width: 100%;
+  transition: transform 0.4s ease;
 }
-.quote-mark {
-  font-size: 44px;
-  line-height: 1;
-  color: hsl(var(--primary));
-  opacity: .3;
-  font-family: Georgia, serif;
-  position: absolute;
-  top: 10px; left: 16px;
-}
-.quote-text {
-  font-size: 16px;
-  color: rgba(255,255,255,.85);
-  line-height: 1.65;
-  padding-top: 22px;
-  font-style: italic;
-}
-.quote-author {
+.review-slide img {
+  width: 100%;
+  height: auto;
   display: block;
-  margin-top: 12px;
-  font-size: 13px;
-  color: rgba(255,255,255,.45);
-  font-style: normal;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 2;
+}
+.slider-btn:hover { background: rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.4); }
+.slider-prev { left: -20px; }
+.slider-next { right: -20px; }
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.slider-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.slider-dot.active {
+  background: hsl(var(--primary));
+  transform: scale(1.3);
 }
 
 /* ── EXPERT ── */
@@ -958,7 +988,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .pain-grid { grid-template-columns: 1fr; }
   .benefits { grid-template-columns: 1fr; }
   .program-days { grid-template-columns: 1fr; }
-  .quotes { grid-template-columns: 1fr; }
+  .slider-prev { left: -12px; }
+  .slider-next { right: -12px; }
+  .reviews-slider { max-width: 100%; }
   .expert-grid { grid-template-columns: 1fr; }
   .expert-photo img { max-width: 160px; }
   .expert-photo { text-align: center; }
@@ -1019,6 +1051,10 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <p class="hero-author">Александра Шумилова<br>18&nbsp;лет в ВЭД с Китаем&nbsp;&middot;&nbsp;200+ клиентов</p>
         </div>
         <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn">Зарегистрироваться на воркшоп</a>
+        <p class="hero-cta-note">
+          <svg class="hero-tg-icon" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Регистрация через Telegram — там&nbsp;же ответы на&nbsp;вопросы и&nbsp;бонус сразу&nbsp;после&nbsp;регистрации
+        </p>
       </div>
     </div>
   </div>
@@ -1230,27 +1266,20 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     <h2 class="reveal">Что говорят клиенты</h2>
     <p class="section-lead">Не отзывы ради отзывов — конкретные слова конкретных людей.</p>
 
-    <div class="quotes reveal">
-      <div class="quote-card reveal-delay-1">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Совершенно не понимали, с чего начать и как работать с фабриками в Китае. Просто взяли нас за руку и провели по всем этапам&nbsp;&mdash; от поиска подходящей фабрики до поставки готового товара. Ни на одном этапе проблем не возникло.</p>
-        <span class="quote-author">— Мария Г., полный цикл поставки</span>
+    <div class="reviews-slider reveal" id="reviewsSlider">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-slide"><img src="../Proofs/отзыв 2.png" alt="Отзыв Марии Г. — полный цикл поставки" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 1.png" alt="Отзыв клиента — оперативно и профессионально" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 7.jpg" alt="Отзыв клиента — благодарность команде" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 4.jpg" alt="Отзыв клиента — таможня без проблем" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 5.jpg" alt="Отзыв — профессионал своего дела" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 6.jpg" alt="Отзыв — потрясающее решение" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 8.jpg" alt="Отзыв — груз получили безупречно" loading="lazy"></div>
+        <div class="review-slide"><img src="../Proofs/отзыв 3.jpg" alt="Отзыв — спасибо за курс" loading="lazy"></div>
       </div>
-      <div class="quote-card reveal-delay-2">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Не знаю как бы я сам всё это сделал и завёз. Вы большие молодцы, вся ваша команда. Надеюсь на долгое сотрудничество.</p>
-        <span class="quote-author">— клиент, первая самостоятельная поставка</span>
-      </div>
-      <div class="quote-card reveal-delay-3">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Товар приехал на ФФ, таможню прошли без проблем. Спасибо за вашу работу. Надеюсь, продолжим сотрудничество.</p>
-        <span class="quote-author">— клиент, поставка оборудования</span>
-      </div>
-      <div class="quote-card reveal-delay-4">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Помогли решить кучу вопросов оперативно и профессионально. Отдельное спасибо Александре&nbsp;&mdash; лично проконтролировала решение наших вопросов.</p>
-        <span class="quote-author">— клиент, сложный кейс</span>
-      </div>
+      <button class="slider-btn slider-prev" aria-label="Предыдущий">&#8249;</button>
+      <button class="slider-btn slider-next" aria-label="Следующий">&#8250;</button>
+      <div class="slider-dots" id="reviewsDots"></div>
     </div>
   </div>
 </section>
@@ -1660,6 +1689,45 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     });
   }, {threshold: 0.5});
   counters.forEach(function(c){ obs.observe(c); });
+})();
+</script>
+
+<script>
+(function(){
+  var track = document.getElementById('reviewsTrack');
+  var slides = track.querySelectorAll('.review-slide');
+  var dotsWrap = document.getElementById('reviewsDots');
+  var cur = 0;
+  var total = slides.length;
+  var autoTimer;
+
+  slides.forEach(function(_,i){
+    var d = document.createElement('button');
+    d.className = 'slider-dot' + (i===0?' active':'');
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n){
+    cur = (n + total) % total;
+    slides.forEach(function(s){ s.style.transform = 'translateX(-' + cur*100 + '%)'; });
+    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
+      d.classList.toggle('active', i===cur);
+    });
+    resetAuto();
+  }
+
+  document.querySelector('.slider-prev').addEventListener('click', function(){ goTo(cur-1); });
+  document.querySelector('.slider-next').addEventListener('click', function(){ goTo(cur+1); });
+
+  function resetAuto(){ clearInterval(autoTimer); autoTimer = setInterval(function(){ goTo(cur+1); }, 4000); }
+  resetAuto();
+
+  var slider = document.getElementById('reviewsSlider');
+  var sx, dx;
+  slider.addEventListener('touchstart', function(e){ sx=e.touches[0].clientX; dx=0; }, {passive:true});
+  slider.addEventListener('touchmove', function(e){ dx=e.touches[0].clientX-sx; }, {passive:true});
+  slider.addEventListener('touchend', function(){ if(Math.abs(dx)>40){ goTo(cur+(dx<0?1:-1)); } });
 })();
 </script>
 </body>
