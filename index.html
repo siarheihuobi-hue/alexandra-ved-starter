@@ -1730,5 +1730,39 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   slider.addEventListener('touchend', function(){ if(Math.abs(dx)>40){ goTo(cur+(dx<0?1:-1)); } });
 })();
 </script>
+
+<script>
+/* ── Telegram deep link: tg:// → fallback https://t.me/ ── */
+(function(){
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a[href*="t.me/"]');
+    if(!link) return;
+    var href = link.getAttribute('href');
+    var tgUrl;
+
+    /* t.me/AShumilova_bot?start=landing → tg://resolve?domain=AShumilova_bot&start=landing */
+    var botMatch = href.match(/t\.me\/([^?]+)\?start=(\w+)/);
+    if(botMatch){
+      tgUrl = 'tg://resolve?domain=' + botMatch[1] + '&start=' + botMatch[2];
+    } else {
+      /* t.me/shumilovachina → tg://resolve?domain=shumilovachina */
+      var chanMatch = href.match(/t\.me\/(\w+)/);
+      if(chanMatch) tgUrl = 'tg://resolve?domain=' + chanMatch[1];
+    }
+
+    if(!tgUrl) return;
+    e.preventDefault();
+
+    /* Try tg:// protocol (opens app directly, bypasses web block) */
+    var opened = false;
+    window.location.href = tgUrl;
+
+    /* Fallback: if app didn't open in 1.5s, go to web link */
+    setTimeout(function(){
+      if(!document.hidden) window.open(href, '_blank');
+    }, 1500);
+  });
+})();
+</script>
 </body>
 </html>
