@@ -2052,19 +2052,14 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   transition: transform .25s;
 }
 .tg-fab.open svg { transform: rotate(45deg) scale(.85); }
-.tg-fab::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid rgba(42,171,238,.4);
-  animation: tg-pulse 2.5s ease-out infinite;
+.tg-fab {
+  animation: tg-pulse 2s ease-out infinite;
 }
-.tg-fab.open::after { animation: none; opacity: 0; }
+.tg-fab.open { animation: none; }
 @keyframes tg-pulse {
-  0% { transform: scale(1); opacity: .6; }
-  70% { transform: scale(1.35); opacity: 0; }
-  100% { transform: scale(1.35); opacity: 0; }
+  0% { box-shadow: 0 0 0 0 rgba(42,171,238,.5); }
+  70% { box-shadow: 0 0 0 14px rgba(42,171,238,0); }
+  100% { box-shadow: 0 0 0 14px rgba(42,171,238,0); }
 }
 .tg-backdrop {
   display: none;
