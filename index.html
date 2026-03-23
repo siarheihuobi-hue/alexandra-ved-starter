@@ -2047,6 +2047,41 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   </button>
 </div>
 
+<!-- ══════════ POPUP FORM HTML ══════════ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-card">
+    <button class="popup-close" aria-label="Закрыть">&times;</button>
+    <h3>Регистрация на воркшоп</h3>
+    <p class="popup-sub">28–29 марта · Zoom · Бесплатно</p>
+
+    <form id="popupRegForm" class="reg-form" onsubmit="return false;">
+      <div class="form-group">
+        <label for="popupName">Имя</label>
+        <input type="text" id="popupName" name="name" placeholder="Как к вам обращаться" required>
+      </div>
+      <div class="form-group">
+        <label for="popupEmail">Email <span class="required">*</span></label>
+        <input type="email" id="popupEmail" name="email" placeholder="На него придёт ссылка на Zoom" required>
+      </div>
+      <div class="form-group">
+        <label for="popupTg">Telegram <span class="optional">(необязательно)</span></label>
+        <input type="text" id="popupTg" name="telegram" placeholder="@username или номер">
+      </div>
+      <button type="submit" class="btn hero-btn reg-submit-btn" id="popupSubmitBtn">Зарегистрироваться — это бесплатно</button>
+      <p class="form-note">Ваши данные в безопасности. Никакого спама.</p>
+    </form>
+
+    <div id="popupSuccess" class="reg-success" style="display:none;">
+      <div class="success-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="hsl(43 85% 47%)" stroke-width="3"/><path d="M20 33l8 8 16-16" stroke="hsl(43 85% 47%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 style="font-size:24px;">Вы зарегистрированы!</h3>
+      <p style="font-size:16px;">Ссылка на Zoom придёт на вашу почту.</p>
+      <p style="margin-top:12px;"><a href="https://t.me/AShumilova_bot?start=landing" target="_blank" style="color:hsl(228 80% 70%);font-size:15px;">Также подключите бота в Telegram →</a></p>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ── Scroll reveal ── */
 (function(){
@@ -2298,41 +2333,6 @@ function submitRegForm(formEl, btnEl, successEl) {
   });
 })();
 </script>
-
-<!-- ══════════ POPUP FORM HTML ══════════ -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-card">
-    <button class="popup-close" aria-label="Закрыть">&times;</button>
-    <h3>Регистрация на воркшоп</h3>
-    <p class="popup-sub">28–29 марта · Zoom · Бесплатно</p>
-
-    <form id="popupRegForm" class="reg-form" onsubmit="return false;">
-      <div class="form-group">
-        <label for="popupName">Имя</label>
-        <input type="text" id="popupName" name="name" placeholder="Как к вам обращаться" required>
-      </div>
-      <div class="form-group">
-        <label for="popupEmail">Email <span class="required">*</span></label>
-        <input type="email" id="popupEmail" name="email" placeholder="На него придёт ссылка на Zoom" required>
-      </div>
-      <div class="form-group">
-        <label for="popupTg">Telegram <span class="optional">(необязательно)</span></label>
-        <input type="text" id="popupTg" name="telegram" placeholder="@username или номер">
-      </div>
-      <button type="submit" class="btn hero-btn reg-submit-btn" id="popupSubmitBtn">Зарегистрироваться — это бесплатно</button>
-      <p class="form-note">Ваши данные в безопасности. Никакого спама.</p>
-    </form>
-
-    <div id="popupSuccess" class="reg-success" style="display:none;">
-      <div class="success-icon">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="hsl(43 85% 47%)" stroke-width="3"/><path d="M20 33l8 8 16-16" stroke="hsl(43 85% 47%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h3 style="font-size:24px;">Вы зарегистрированы!</h3>
-      <p style="font-size:16px;">Ссылка на Zoom придёт на вашу почту.</p>
-      <p style="margin-top:12px;"><a href="https://t.me/AShumilova_bot?start=landing" target="_blank" style="color:hsl(228 80% 70%);font-size:15px;">Также подключите бота в Telegram →</a></p>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
