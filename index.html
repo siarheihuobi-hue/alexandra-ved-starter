@@ -2190,27 +2190,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 </script>
 
 <script>
-(function(){
-  var target = new Date('2026-03-28T12:00:00+03:00').getTime();
-  var el = document.getElementById('countdown');
-  function update(){
-    var now = Date.now();
-    var diff = target - now;
-    if(diff <= 0){ el.textContent = 'Уже идёт!'; return; }
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor((diff % 86400000) / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    var parts = [];
-    if(d > 0) parts.push(d + 'д');
-    parts.push(h + 'ч');
-    parts.push(m + 'м');
-    parts.push(s + 'с');
-    el.textContent = parts.join(' ');
-  }
-  update();
-  setInterval(update, 1000);
-})();
+/* countdown removed — replaced with seats counter */
 
 /* ── Scroll to top ── */
 (function(){
