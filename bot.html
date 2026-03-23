@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Слепой импорт — Бесплатный воркшоп | Александра Шумилова</title>
+<meta name="description" content="Бесплатный воркшоп 28-29 марта. Разберём вашу реальную схему поставок из Китая — и покажем, где в ней спрятан риск. Александра Шумилова, 18 лет в ВЭД.">
+<meta property="og:title" content="Слепой импорт: бесплатный воркшоп 28-29 марта">
+<meta property="og:description" content="Берёте свою реальную схему — и за два вечера видите, где в ней спрятан риск. Уходите с инструментами, а не общими знаниями.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(102625647,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102625647" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+
+<style>
+:root {
+  --primary: 228 70% 55%;
+  --primary-light: 228 80% 70%;
+  --accent: 43 90% 50%;
+  --accent-light: 43 95% 65%;
+  --bg: 0 0% 100%;
+  --bg-gray: 220 14% 96%;
+  --bg-dark: 220 20% 6%;
+  --text: 220 15% 10%;
+  --text-muted: 220 10% 45%;
+  --positive: 145 55% 35%;
+  --negative: 4 65% 47%;
+  --gold: 43 85% 47%;
+  --shadow-sm: 0 1px 3px hsl(220 15% 10% / 0.06);
+  --shadow-md: 0 4px 16px hsl(220 15% 10% / 0.08);
+  --shadow-lg: 0 12px 32px hsl(220 15% 10% / 0.12);
+  --shadow-glow: 0 0 20px hsl(228 70% 55% / 0.25);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  --col: 100%;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 18px; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: hsl(var(--bg)); color: hsl(var(--text)); line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+::selection { background: hsl(var(--primary) / 0.15); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: hsl(var(--primary)); text-decoration: none; }
+
+.container { max-width: var(--col); margin: 0 auto; padding: 0 80px; }
+
+/* ── SECTION SEPARATOR ── */
+.section + .section {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ── CTA BUTTON ── */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #c8940f 0%, #f0c040 50%, #c8940f 100%);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 18px 36px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow var(--transition-base), transform var(--transition-fast), background var(--transition-base);
+  box-shadow: 0 6px 24px rgba(200,148,15,.35);
+  text-shadow: 0 1px 2px rgba(0,0,0,.2);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  line-height: 1.3;
+  text-align: center;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%);
+  animation: shine 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shine { 0%{left:-100%} 60%{left:150%} 100%{left:150%} }
+.btn:hover { box-shadow: 0 10px 36px rgba(200,148,15,.55), 0 0 40px rgba(240,192,64,.2); transform: translateY(-2px); text-decoration: none; }
+.btn:active { transform: translateY(0) scale(0.97); }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: hsl(var(--primary));
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1.5px solid hsl(var(--primary));
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+  text-decoration: none;
+}
+.btn-outline:hover { background: hsl(var(--primary)); color: #fff; text-decoration: none; }
+.btn-outline:active { transform: scale(0.97); }
+
+/* ── HERO ── */
+.hero {
+  background: hsl(var(--bg-dark));
+  color: #fff;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%; right: 18%;
+  transform: translate(50%, -50%);
+  width: 560px; height: 560px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, hsl(var(--primary)), hsl(228 70% 45%), hsl(228 80% 70%), hsl(var(--primary)));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%; right: 18%;
+  transform: translate(50%, -50%);
+  width: 526px; height: 526px;
+  border-radius: 50%;
+  background: hsl(var(--bg-dark));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+/* Subtle radial gradient blobs in hero */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 20%; left: 10%;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-container::after {
+  content: '';
+  position: absolute;
+  bottom: 10%; right: 30%;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  position: relative;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding-top: 20px;
+}
+.hero-pill {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.9);
+  border: 1.5px solid hsl(var(--primary));
+  padding: 8px 20px;
+  border-radius: 24px;
+  white-space: nowrap;
+}
+.hero-pill strong { color: #f0c040; font-weight: 700; }
+.hero-pill--timer {
+  border-color: #f0c040;
+  color: #f0c040;
+}
+.hero-pill--timer span { color: hsl(var(--primary-light)); }
+.hero-pretitle {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-pretitle::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 1px;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 28px;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+.hero h1 em {
+  color: hsl(var(--primary));
+  font-style: normal;
+  display: block;
+  font-size: .55em;
+  line-height: 1.3;
+  margin-top: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.hero-sub {
+  font-size: 20px;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 540px;
+}
+.hero-benefits-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  color: #f0c040;
+  margin-bottom: 16px;
+}
+.hero-benefits {
+  list-style: none;
+  margin-bottom: 36px;
+}
+.hero-benefits li {
+  font-size: 17px;
+  color: rgba(255,255,255,.9);
+  padding: 8px 0 8px 36px;
+  position: relative;
+  line-height: 1.5;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 14px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0c040 40%, rgba(240,192,64,.3) 100%);
+  box-shadow: 0 0 8px rgba(240,192,64,.4);
+}
+.hero-bonuses-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.hero-cards {
+  display: inline-flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.hero-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+.hero-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.hero-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.45;
+}
+.hero-card--highlight {
+  position: relative;
+  overflow: visible;
+}
+.hero-card-badge {
+  position: absolute;
+  top: -8px; right: -10px;
+  background: linear-gradient(135deg, #c8940f 0%, #f0c040 50%, #c8940f 100%);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  transform: rotate(4deg);
+  box-shadow: 0 2px 10px rgba(200,148,15,.5);
+  animation: badge-pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+  z-index: 5;
+  overflow: hidden;
+}
+.hero-card-badge::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.4) 50%, transparent 70%);
+  animation: badge-sweep 2.5s ease-in-out infinite;
+}
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 2px 10px rgba(200,148,15,.5); }
+  50% { box-shadow: 0 4px 20px rgba(240,192,64,.8), 0 0 30px rgba(240,192,64,.3); }
+}
+@keyframes badge-sweep {
+  0% { left: -100%; }
+  60% { left: 150%; }
+  100% { left: 150%; }
+}
+.hero-author {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+.hero-btn {
+  margin-top: 0;
+  padding: 48px 20px 48px 20px;
+  font-size: 22px;
+  animation: btn-pulse 2s ease-in-out infinite;
+  width: 100%;
+  white-space: nowrap;
+  margin-right: 20px;
+  align-self: flex-end;
+  color: #000;
+  text-shadow: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(200,148,15,.35); transform: scale(1); }
+  50% { box-shadow: 0 8px 36px rgba(240,192,64,.65), 0 0 50px rgba(240,192,64,.2); transform: scale(1.03); }
+}
+.hero-cta-note {
+  margin-top: 14px;
+  margin-right: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.5;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.hero-tg-icon {
+  width: 18px; height: 18px;
+  fill: #2AABEE;
+  flex-shrink: 0;
+}
+.hero-cta-note a { color: rgba(255,255,255,.55); text-decoration: underline; }
+.hero-cta-note a:hover { color: rgba(255,255,255,.9); }
+.hero-right {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: end;
+  margin-bottom: 100px;
+}
+.hero-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-photo img {
+  max-width: 570px;
+  width: 150%;
+  filter: brightness(1.05) contrast(1.02);
+  position: relative;
+  z-index: 4;
+  transform-origin: bottom right;
+  margin-left: -90px;
+}
+
+/* ── WOW EFFECTS ── */
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+.reveal-delay-5 { transition-delay: .5s; }
+
+/* Hover lift for cards */
+.hero-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px hsl(228 70% 55% / 0.2);
+  border-color: hsl(228 70% 55% / 0.3);
+}
+
+/* Animated gradient headline */
+.section h2 {
+  background: linear-gradient(90deg, hsl(var(--text)) 0%, hsl(var(--primary)) 50%, hsl(var(--text)) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+.section-dark h2 {
+  background: linear-gradient(90deg, #fff 0%, hsl(var(--primary-light)) 50%, #fff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Parallax sections */
+.section-gray {
+  background-image: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.04) 0%, transparent 50%),
+                     radial-gradient(circle at 80% 50%, hsl(var(--accent) / 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+.section-dark {
+  background-image: radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.12) 0%, transparent 50%),
+                     radial-gradient(circle at 70% 70%, hsl(var(--primary) / 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Smooth glow on final CTA */
+.final-cta {
+  background-size: 200% 200%;
+  animation: final-gradient 6s ease infinite;
+}
+@keyframes final-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── ALERT BOX ── */
+.alert {
+  background: hsl(var(--gold) / 0.06);
+  border-left: 4px solid hsl(var(--gold));
+  border-radius: 0 16px 16px 0;
+  padding: 24px 28px;
+  font-size: 20px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+}
+.alert strong { color: hsl(var(--gold)); }
+
+/* ── SECTION ── */
+.section { padding: 80px 0; }
+.section-gray { background: hsl(var(--bg-gray)); }
+.section-dark { background: hsl(var(--bg-dark)); color: #fff; }
+.section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: hsl(var(--text));
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.section-dark h2 { color: #fff; }
+.section-lead {
+  font-size: 24px;
+  color: hsl(var(--text-muted));
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+.section-dark .section-lead { color: rgba(255,255,255,.65); }
+
+/* ── PAIN CARDS ── */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.pain-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: none;
+  border-left: 4px solid hsl(var(--gold));
+  border-top: none;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+.pain-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px hsl(220 15% 10% / 0.14);
+}
+.pain-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: hsl(var(--gold));
+  margin-bottom: 10px;
+}
+.pain-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 10px; color: #fff; line-height: 1.4; }
+.pain-card p { font-size: 20px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* ── SELF-CHECK ── */
+.selfcheck {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border: 1px solid hsl(var(--primary) / 0.12);
+  box-shadow: var(--shadow-sm);
+}
+.selfcheck-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.selfcheck ol { padding-left: 0; list-style: none; counter-reset: selfcheck; }
+.selfcheck li {
+  font-size: 20px;
+  color: rgba(255,255,255,0.65);
+  padding: 8px 0 8px 42px;
+  line-height: 1.6;
+  position: relative;
+  counter-increment: selfcheck;
+  transition: background var(--transition-fast);
+  border-radius: 8px;
+}
+.selfcheck li:hover {
+  background: hsl(var(--primary) / 0.04);
+}
+.selfcheck li::before {
+  content: counter(selfcheck);
+  position: absolute;
+  left: 0; top: 6px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: hsl(var(--accent) / 0.15);
+  color: hsl(var(--gold));
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.selfcheck-result {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  padding-top: 14px;
+  border-top: 1px solid hsl(var(--primary) / 0.2);
+}
+
+/* ── BENEFITS ── */
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.benefit {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+.benefit:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px hsl(220 15% 10% / 0.14);
+  border-color: hsl(var(--primary) / 0.15);
+}
+.benefit-icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.25);
+}
+.benefit-icon svg { width: 26px; height: 26px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.benefit h3 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #fff; }
+.benefit p { font-size: 20px; color: rgba(255,255,255,0.65); line-height: 1.55; }
+.benefit-note { font-size: 13px; color: hsl(var(--primary)); font-weight: 600; margin-top: 4px; }
+
+.section-cta { text-align: center; margin-top: 12px; }
+.section-cta .btn {
+  padding: 35px 48px;
+  font-size: 18px;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 6px 24px hsl(var(--gold) / 0.35), 0 0 40px hsl(var(--gold) / 0.15);
+}
+.section-cta .btn:hover {
+  box-shadow: 0 10px 32px hsl(var(--gold) / 0.5), 0 0 60px hsl(var(--gold) / 0.2);
+}
+
+/* ── PROGRAM ── */
+.program-days { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.program-day {
+  background: hsl(220 15% 8%);
+  border-radius: 20px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  overflow: hidden;
+}
+.program-day:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.program-day-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.day-label {
+  font-family: 'Space Grotesk', sans-serif;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 8px 22px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  background: transparent;
+}
+.day-date {
+  font-family: 'Space Grotesk', sans-serif;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 22px;
+  border-radius: 24px;
+  background: hsl(var(--primary));
+  color: #fff;
+  box-shadow: 0 4px 14px hsl(var(--primary) / 0.35);
+}
+.program-day-body { padding: 24px 28px 28px; }
+.program-day h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+  line-height: 1.3;
+}
+.program-day .day-subtitle {
+  font-size: 20px;
+  color: hsl(var(--primary-light));
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.45;
+}
+.program-day ul { list-style: none; }
+.program-day li {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  padding: 9px 0 9px 24px;
+  position: relative;
+  line-height: 1.55;
+}
+.program-day li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+}
+.program-day li strong { color: #fff; font-weight: 600; }
+.program-day-result {
+  margin-top: 18px;
+  padding: 16px 20px;
+  background: hsl(var(--primary) / 0.1);
+  border-radius: 12px;
+  border: 1px solid hsl(var(--primary) / 0.15);
+  font-size: 18px;
+  color: hsl(var(--primary-light));
+  line-height: 1.5;
+}
+.program-day-result strong { color: #fff; }
+.program-format {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 20px;
+  color: hsl(var(--text-muted));
+}
+.honest-note {
+  margin-top: 24px;
+  padding: 18px 22px;
+  background: hsl(var(--primary) / 0.06);
+  border-radius: 12px;
+  font-size: 20px;
+  color: hsl(var(--text-muted));
+  line-height: 1.6;
+  text-align: center;
+}
+.honest-note strong { color: hsl(var(--text)); }
+
+/* ── WHY NOW ── */
+.why-now-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: stretch; }
+.why-now-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.why-now-card {
+  background: hsl(220 15% 8%);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+.why-now-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.15);
+}
+.why-now-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.why-now-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.why-now-card p {
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+.why-now-secret {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(228 70% 35% / 0.2));
+  border-radius: 18px;
+  padding: 28px 24px;
+  border: 1px solid hsl(var(--primary) / 0.25);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.why-now-secret h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+.why-now-secret p {
+  font-size: 20px;
+  color: hsl(var(--primary-light));
+  line-height: 1.5;
+  max-width: 300px;
+}
+.why-now-secret-icon {
+  margin-bottom: 4px;
+  line-height: 0;
+}
+.why-now-secret-icon svg {
+  width: 72px;
+  height: 72px;
+}
+.why-now-btn {
+  margin-top: auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 32px 20px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* ── CASES ── */
+.cases { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
+.case-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: none;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+.case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px hsl(220 15% 10% / 0.12);
+}
+.case-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.case-col { padding: 18px 20px; }
+.case-col-before { background: hsl(var(--gold) / 0.06); border-right: 1px solid rgba(255,255,255,0.08); }
+.case-col-after { background: rgba(34,197,94,0.08); }
+.case-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.case-tag.before { color: hsl(var(--gold)); }
+.case-tag.after { color: hsl(var(--positive)); }
+.case-text { font-size: 20px; color: rgba(255,255,255,0.65); line-height: 1.55; }
+.case-text strong { color: #fff; font-weight: 600; }
+.case-niche {
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.04);
+  font-size: 18px;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.case-niche strong { color: #fff; }
+
+/* ── QUOTES SLIDER ── */
+.reviews-slider { position: relative; max-width: 600px; margin: 0 auto 32px; }
+.reviews-track {
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.review-slide {
+  min-width: 100%;
+  transition: transform 0.4s ease;
+}
+.review-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 2;
+}
+.slider-btn:hover { background: rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.4); }
+.slider-prev { left: -20px; }
+.slider-next { right: -20px; }
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.slider-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.slider-dot.active {
+  background: hsl(var(--primary));
+  transform: scale(1.3);
+}
+
+/* ── EXPERT ── */
+.expert-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
+.expert-photo img { border-radius: 8px; box-shadow: 0 8px 28px rgba(0,0,0,.1); width: 200px; }
+.expert-photo-caption { font-size: 12px; color: hsl(var(--text-muted)); margin-top: 8px; text-align: center; line-height: 1.4; }
+.expert-name { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.expert-meta { font-size: 20px; color: rgba(255,255,255,0.6); margin-bottom: 20px; line-height: 1.6; }
+.expert-story {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px 26px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  border-left: 4px solid hsl(var(--primary));
+}
+.expert-story strong { color: #fff; }
+.expert-facts { list-style: none; }
+.expert-facts li {
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  padding: 9px 0 9px 26px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.5;
+}
+.expert-facts li:last-child { border-bottom: none; }
+.expert-facts li::before {
+  content: '\2713';
+  position: absolute; left: 0; top: 9px;
+  color: hsl(var(--positive));
+  font-weight: 700;
+  font-size: 14px;
+}
+.expert-facts li strong { color: #fff; }
+.forum-photo { margin-top: 16px; }
+.forum-photo img { width: 200px; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+.forum-photo-caption { font-size: 12px; color: hsl(var(--text-muted)); margin-top: 6px; text-align: center; }
+
+/* ── NOT FOR ── */
+.notfor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.notfor-block { border-radius: 16px; padding: 28px; transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); }
+.notfor-block:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.notfor-block.no { background: hsl(var(--gold) / 0.06); border: 1px solid hsl(var(--gold) / 0.2); }
+.notfor-block.yes { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); }
+.notfor-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 14px; }
+.notfor-block.no .notfor-title { color: hsl(var(--gold)); }
+.notfor-block.yes .notfor-title { color: hsl(var(--positive)); }
+.notfor-list { list-style: none; }
+.notfor-list li { font-size: 20px; color: rgba(255,255,255,0.65); padding: 7px 0 7px 22px; position: relative; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.notfor-list li:last-child { border-bottom: none; }
+.notfor-block.no .notfor-list li::before { content: '\2715'; position: absolute; left: 0; color: hsl(var(--gold)); font-weight: 700; }
+.notfor-block.yes .notfor-list li::before { content: '\2713'; position: absolute; left: 0; color: hsl(var(--positive)); font-weight: 700; }
+
+/* ── FAQ ── */
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color var(--transition-smooth);
+}
+.faq-item:hover { border-color: rgba(255,255,255,0.15); }
+.faq-question {
+  padding: 22px 56px 22px 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: rgba(255,255,255,0.03); }
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: hsl(var(--primary-light));
+  font-weight: 300;
+  transition: transform 0.3s;
+}
+.faq-item.active .faq-question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.active .faq-answer {
+  max-height: 400px;
+}
+.faq-answer-inner {
+  padding: 0 28px 22px;
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background:
+    radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(228 80% 70% / 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(var(--primary)) 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: hsl(var(--primary) / 0.15);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.final-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 250px; height: 250px;
+  border-radius: 50%;
+  background: hsl(var(--accent) / 0.1);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.final-cta h2 { font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 32px; margin-bottom: 18px; line-height: 1.35; position: relative; z-index: 1; }
+.final-cta p { font-size: 20px; color: rgba(255,255,255,.85); margin-bottom: 10px; line-height: 1.6; position: relative; z-index: 1; }
+.final-cta .cta-detail { font-size: 14px; color: rgba(255,255,255,.55); margin-bottom: 36px; }
+.final-cta .btn {
+  background: linear-gradient(135deg, #c8940f 0%, #f0c040 50%, #c8940f 100%);
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 22px 56px;
+  box-shadow: 0 6px 24px rgba(200,148,15,.4);
+  text-shadow: none;
+  animation: btn-pulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+.final-cta .btn:hover {
+  box-shadow: 0 10px 36px rgba(240,192,64,.6), 0 0 50px rgba(240,192,64,.2);
+}
+.final-note {
+  margin-top: 24px;
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+.final-note a { color: rgba(255,255,255,.65); text-decoration: underline; }
+.final-note a:hover { color: #fff; }
+
+/* ── FOOTER ── */
+.footer {
+  background: hsl(var(--bg-dark));
+  color: rgba(255,255,255,.4);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 13px;
+  position: relative;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
+}
+.footer a { color: rgba(255,255,255,.6); }
+
+/* ── STICKY MOBILE ── */
+@media (max-width: 768px) {
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17,17,17,.97); padding: 12px 16px; z-index: 200; display: flex; justify-content: center; box-shadow: 0 -4px 20px rgba(0,0,0,.2); }
+  .sticky-cta .btn { width: 100%; text-align: center; padding: 15px 20px; font-size: 16px; }
+  .footer { padding-bottom: 80px; }
+}
+@media (min-width: 769px) { .sticky-cta { display: none; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  .hero { min-height: auto; }
+  .hero-container { padding: 0 20px; }
+  .container { padding: 0 20px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; min-height: auto; padding: 40px 0 0; }
+  .hero-right { order: -1; margin-bottom: 24px; align-self: center; }
+  .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; }
+  .hero-photo img { max-width: 220px; width: 100%; margin: 0 auto; margin-left: 0; }
+  .hero-btn { width: 100%; margin-right: 0; padding: 20px 16px; font-size: 18px; }
+  .hero::before { width: 280px; height: 280px; right: 50%; transform: translate(50%, -50%); top: 140px; }
+  .hero::after { width: 255px; height: 255px; right: 50%; transform: translate(50%, -50%); top: 140px; }
+  .hero h1 { font-size: 36px; }
+  .hero h1 em { font-size: .75em; }
+  .hero-sub { font-size: 16px; }
+  .hero-pills { justify-content: center; }
+  .hero-cta-wrap { justify-content: center; }
+  .hero-cards { flex-direction: column; }
+  .hero-card { min-width: auto; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .benefits { grid-template-columns: 1fr; }
+  .program-bottom-row { grid-template-columns: 1fr !important; }
+  .program-days { grid-template-columns: 1fr; }
+  .program-day-header { padding: 16px 20px; }
+  .program-day-body { padding: 20px 20px 24px; }
+  .program-day h3 { font-size: 21px; }
+  .program-day .day-subtitle { font-size: 17px; }
+  .program-day li { font-size: 16px; }
+  .why-now-layout { grid-template-columns: 1fr; }
+  .why-now-grid { grid-template-columns: 1fr; }
+  .why-now-secret { padding: 28px 24px; }
+  .slider-prev { left: -12px; }
+  .slider-next { right: -12px; }
+  .reviews-slider { max-width: 100%; }
+  .expert-grid { grid-template-columns: 1fr; }
+  .expert-photo img { max-width: 160px; }
+  .expert-photo { text-align: center; }
+  .forum-photo img { max-width: 160px; margin: 0 auto; }
+  .notfor-grid { grid-template-columns: 1fr; }
+  .case-header { grid-template-columns: 1fr; }
+  .case-col-before { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .section h2 { font-size: 32px; }
+  .section { padding: 56px 0; }
+  .final-cta { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pills">
+          <span class="hero-pill">28–29 марта 12:00 МСК</span>
+          <span class="hero-pill">Онлайн</span>
+          <span class="hero-pill"><strong>Бесплатно</strong></span>
+          <span class="hero-pill hero-pill--timer">До старта <span id="countdown"></span></span>
+        </div>
+
+        <p class="hero-pretitle">Воркшоп по белому импорту из Китая</p>
+        <h1>Слепой импорт — увидеть реальность<em>Найдите риски и потери в своей схеме за 2 дня</em></h1>
+        <p class="hero-benefits-title">Вы получите:</p>
+        <ul class="hero-benefits">
+          <li>Разбор вашей реальной схемы поставок — вживую</li>
+          <li>Конкретные точки, где вы теряете деньги и контроль</li>
+          <li>Инструменты для проверки посредника и документов</li>
+        </ul>
+
+        <p class="hero-bonuses-title">Три бонуса за регистрацию</p>
+        <div class="hero-cards">
+          <div class="hero-card">
+            <p class="hero-card-title">Чек-лист диагностики</p>
+            <p>7 вопросов, которые покажут слабые места вашей схемы</p>
+          </div>
+          <div class="hero-card hero-card--highlight">
+            <span class="hero-card-badge">Сразу после регистрации</span>
+            <p class="hero-card-title">20 вопросов посреднику</p>
+            <p>За 15 минут поймёте, можно ли ему доверять деньги</p>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card-title">План перехода</p>
+            <p>Дорожная карта от слепого импорта к системе</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo">
+          <img src="img/alexandra-cutout.png" alt="Александра Шумилова">
+          <p class="hero-author">Александра Шумилова<br>18&nbsp;лет в ВЭД с Китаем&nbsp;&middot;&nbsp;200+ клиентов</p>
+        </div>
+        <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn">Зарегистрироваться на воркшоп</a>
+        <p class="hero-cta-note">
+          <svg class="hero-tg-icon" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Регистрация через Telegram — там&nbsp;же ответы на&nbsp;вопросы и&nbsp;бонус сразу&nbsp;после&nbsp;регистрации
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ БОЛЬ — УЗНАТЬ СЕБЯ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Три ситуации. Узнаёте себя?</h2>
+    <p class="section-lead">Это реальные истории, а не придуманные страшилки. Все три объединяет одно: человек платил и отвечал — но не контролировал.</p>
+
+    <div class="pain-grid reveal">
+      <div class="pain-card reveal-delay-1">
+        <p class="pain-card-tag">Ситуация 1</p>
+        <h3>«Прямая фабрика» оказалась перекупщиком</h3>
+        <p>Импортёр одежды на WB несколько лет был уверен, что работает с производителем. Качество скакало, претензии предъявить некому. Когда разобрались — посредник, который закупал у разных фабрик. Годами переплачивал и не знал.</p>
+      </div>
+      <div class="pain-card reveal-delay-2">
+        <p class="pain-card-tag">Ситуация 2</p>
+        <h3>«Белый ввоз» оказался карго с красивыми бумагами</h3>
+        <p>Выбрал компанию с самой низкой ценой. Документы были. Схема казалась официальной — пока не пришёл запрос из налоговой. Оказалось: те же карго, только с красивыми бумагами. Реальной защиты не было.</p>
+      </div>
+      <div class="pain-card reveal-delay-3">
+        <p class="pain-card-tag">Ситуация 3</p>
+        <h3>Документы не сошлись — на этапе таможни</h3>
+        <p>Поставщик сам оформил экспортную декларацию. Наименования, вес, цена — ничего не совпало с российской стороной. Штрафы, доначисления, разбирательства — всё на импортёре. Поставщик здесь ни при чём.</p>
+      </div>
+    </div>
+
+    <div class="alert">
+      Это не страшилки и не «у кого-то когда-то». <strong>Один день. Один запрос от налоговой или маркетплейса.</strong> И вы понимаете, что всё это время не управляли импортом — просто надеялись, что никто не задаст лишних вопросов.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ САМОПРОВЕРКА ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Проверьте себя прямо сейчас</h2>
+    <p class="section-lead">Ответьте честно — без документов, по памяти.</p>
+
+    <div class="selfcheck reveal">
+      <p class="selfcheck-title">По вашей последней поставке из Китая:</p>
+      <ol>
+        <li>У вас есть двуязычный контракт (рус + англ) с поставщиком?</li>
+        <li>Вы видели экспортную декларацию на эту поставку?</li>
+        <li>Вы знаете реальную себестоимость — с учётом всех расходов до склада?</li>
+        <li>Вы знаете суммы таможенных платежей по этой поставке?</li>
+        <li>Вы знаете код ТН ВЭД своего товара и что к нему применяется?</li>
+        <li>Вы знаете, есть ли у вашего поставщика экспортная лицензия?</li>
+        <li>Оплата прошла напрямую на счёт поставщика, а не через третье лицо?</li>
+      </ol>
+      <p class="selfcheck-result">3 и больше «нет» — у вас слепой импорт. Не в теории. В вашей конкретной схеме прямо сейчас. Именно это мы разбираем на воркшопе.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ЧТО ПОЛУЧИТЕ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Что вы получите за два вечера</h2>
+    <p class="section-lead">Это не курс «про импорт вообще». Берёте свою реальную схему и работаете с ней.</p>
+
+    <div class="benefits reveal">
+      <div class="benefit reveal-delay-1">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <h3>Разбор вашей ситуации</h3>
+          <p>В каждом дне — 2–3 реальные ситуации участников вживую. Разбираем схему, логистику, документы. Не абстрактные примеры — реальные кейсы людей в эфире.</p>
+        </div>
+      </div>
+      <div class="benefit reveal-delay-2">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h3>Чек-лист диагностики: 7 блоков</h3>
+          <p>Поставщик, документы, логистика, оплата, таможня, ВК, маркетплейс. Проходите по своей поставке и видите, где именно нет контроля.</p>
+          <p class="benefit-note">Получите сразу при регистрации</p>
+        </div>
+      </div>
+      <div class="benefit reveal-delay-3">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <h3>20 вопросов для посредника</h3>
+          <p>За 15 минут понять, можно ли доверять этому человеку деньги. Не ощущениям — конкретным ответам на конкретные вопросы.</p>
+          <p class="benefit-note">Получите сразу при регистрации</p>
+        </div>
+      </div>
+      <div class="benefit reveal-delay-4">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>Пошаговый план перехода</h3>
+          <p>С чего начать именно вам — исходя из того, где вы сейчас. Не шаблон, а структура под вашу ситуацию.</p>
+          <p class="benefit-note">Для прошедших оба дня</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a href="https://t.me/AShumilova_bot?start=landing" class="btn">Зарегистрироваться — это бесплатно</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ПРОГРАММА ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Программа события</h2>
+    <p class="section-lead">Два дня — от диагностики к системе. Каждый день — конкретная задача, которую вы решаете на своём материале.</p>
+
+    <div class="program-days reveal">
+
+      <div class="program-day reveal-delay-1">
+        <div class="program-day-header">
+          <span class="day-label">День 1</span>
+          <span class="day-date">28 марта · 12:00</span>
+        </div>
+        <div class="program-day-body">
+          <h3>Слепой импорт&nbsp;&mdash; увидеть реальность</h3>
+          <p class="day-subtitle">Где вы теряете контроль и деньги&nbsp;&mdash; и почему этого не видно, пока не поздно</p>
+          <ul>
+            <li>Что такое слепой импорт и почему он выглядит как&nbsp;&laquo;норма&raquo;</li>
+            <li>Иллюзия контроля: посредник есть, документы есть&nbsp;&mdash; а&nbsp;системы нет</li>
+            <li>Деньги и ответственность: кто платит, когда что-то идёт не&nbsp;так</li>
+            <li><strong>Диагностика в эфире:</strong> 7&nbsp;вопросов по вашей схеме&nbsp;&mdash; отвечаете честно, для&nbsp;себя</li>
+            <li>Реальные кейсы: доначисления, заблокированные счета, арестованные партии</li>
+          </ul>
+          <div class="program-day-result">
+            <strong>Уходите с:</strong> чек-лист диагностики + 20&nbsp;вопросов для проверки посредника
+          </div>
+        </div>
+      </div>
+
+      <div class="program-day reveal-delay-2">
+        <div class="program-day-header">
+          <span class="day-label">День 2</span>
+          <span class="day-date">29 марта · 12:00</span>
+        </div>
+        <div class="program-day-body">
+          <h3>Система и выбор</h3>
+          <p class="day-subtitle">Как выглядит управляемый импорт&nbsp;&mdash; и&nbsp;какие варианты у&nbsp;вас есть дальше</p>
+          <ul>
+            <li>СКИ&nbsp;&mdash; Система Каскадного Импорта: логика, а&nbsp;не&nbsp;инструкция</li>
+            <li>Слепой vs управляемый: конкретное сравнение по&nbsp;5&nbsp;параметрам</li>
+            <li>Почему знания и курсы не&nbsp;работают без системы</li>
+            <li><strong>Демонстрация вживую:</strong> Карта рисков импорта&nbsp;&mdash; интерактивный инструмент</li>
+            <li>Три варианта дальше: оставить, собирать самому, пройти через систему</li>
+          </ul>
+          <div class="program-day-result">
+            <strong>Уходите с:</strong> пошаговый план перехода + карта рисков + подарки для&nbsp;заполнивших анкету
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="program-format" style="color:rgba(255,255,255,0.5);">Zoom&nbsp;&middot;&nbsp;~2&nbsp;часа каждый день&nbsp;&middot;&nbsp;Живой эфир</p>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch;margin-top:24px;" class="program-bottom-row">
+      <div class="honest-note" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);margin-top:0;">
+        <strong style="color:rgba(255,255,255,0.85);">Честно про конец дня 2:</strong> расскажем о программе продолжения — для тех, кто захочет внедрять систему с поддержкой. Но это отдельное решение, без давления. Большинство уйдёт с инструментами и будет применять самостоятельно.
+      </div>
+      <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn" style="margin:0;white-space:nowrap;display:flex;align-items:center;justify-content:center;width:100%;" target="_blank">Принять участие</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ПОЧЕМУ СЕЙЧАС ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal" style="color:#fff;">Почему нельзя пропустить</h2>
+    <p class="section-lead" style="color:rgba(255,255,255,0.55);">Четыре причины прийти именно 28–29 марта, а не «когда-нибудь потом».</p>
+
+    <div class="why-now-layout reveal">
+
+      <div class="why-now-grid" style="margin-bottom:0;">
+        <div class="why-now-card reveal-delay-1">
+          <div class="why-now-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><circle cx="24" cy="24" r="12" stroke="#fff" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="#fff"/></svg></div>
+          <h3>Таможня ужесточается прямо сейчас</h3>
+          <p>Новые требования к маркировке, сертификации, контроль за карго. Кто не перестроится в ближайшие месяцы&nbsp;&mdash; рискует потерять партию и деньги.</p>
+        </div>
+        <div class="why-now-card reveal-delay-2">
+          <div class="why-now-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><circle cx="24" cy="24" r="12" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/></svg></div>
+          <h3>Ваш посредник не&nbsp;скажет вам правду</h3>
+          <p>Ему выгодно, чтобы вы оставались в слепом импорте. На воркшопе вы получите 20&nbsp;вопросов, которые покажут реальную картину.</p>
+        </div>
+        <div class="why-now-card reveal-delay-3">
+          <div class="why-now-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><rect x="16" y="16" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3>Диагностика вашей схемы вживую</h3>
+          <p>Не запись. Не курс. Александра разбирает ситуации участников в прямом эфире. Это невозможно повторить в записи.</p>
+        </div>
+        <div class="why-now-card reveal-delay-4">
+          <div class="why-now-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><rect x="17" y="17" width="14" height="14" rx="2" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3>Вы не знаете свою реальную маржу</h3>
+          <p>Большинство предпринимателей считают прибыль неправильно. На воркшопе проведём расчёт&nbsp;&mdash; результат может удивить.</p>
+        </div>
+      </div>
+
+      <div class="why-now-secret reveal-delay-2">
+        <div class="why-now-secret-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><polygon points="24,4 44,24 24,44 4,24" stroke="hsl(var(--gold))" stroke-width="1.5"/><polygon points="24,14 34,24 24,34 14,24" stroke="hsl(var(--gold))" stroke-width="2" fill="hsl(var(--gold) / 0.1)"/></svg></div>
+        <h3>Секретный бонус&nbsp;&mdash; для&nbsp;участников СКИ</h3>
+        <p>Заполните анкету на воркшопе и&nbsp;присоединитесь к&nbsp;программе&nbsp;&mdash; бонус ждёт вас внутри.</p>
+        <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn why-now-btn" target="_blank">Принять участие</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ КЕЙСЫ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Как это выглядит на практике</h2>
+    <p class="section-lead">Реальные истории клиентов. Без округлений.</p>
+
+    <div class="cases reveal">
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-col case-col-before">
+            <p class="case-tag before">Было</p>
+            <p class="case-text">Закупал через карго у «прямых фабрик». Получал расчёт от логиста — ориентировался на итоговую цифру. Не понимал, что ещё «всплывёт» потом.</p>
+          </div>
+          <div class="case-col case-col-after">
+            <p class="case-tag after">Стало</p>
+            <p class="case-text">Есть таблица расчёта себестоимости — видит каждую строку. <strong>Скрытая наценка карго составляла 15–25% от суммы поставки.</strong> Теперь считает юнит-экономику сам, до перевода денег.</p>
+          </div>
+        </div>
+        <p class="case-niche"><strong>Ниша:</strong> товары для дома, WB/Ozon, поставки 4–6 раз в год</p>
+      </div>
+
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-col case-col-before">
+            <p class="case-tag before">Было</p>
+            <p class="case-text">10+ поставщиков одежды с 1688. Планировал «просто оформить документы» с теми же. Думал: у меня уже есть всё, нужно только сделать «по-белому».</p>
+          </div>
+          <div class="case-col case-col-after">
+            <p class="case-tag after">Стало</p>
+            <p class="case-text">Оказалось: большинство поставщиков без экспортных лицензий — каждая официальная поставка была под угрозой. <strong>Нашли фабрики с лицензиями, заключили прямые контракты.</strong> Стабильное качество, белый ввоз, без посредников.</p>
+          </div>
+        </div>
+        <p class="case-niche"><strong>Ниша:</strong> одежда, маркетплейс, 10+ поставщиков</p>
+      </div>
+
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-col case-col-before">
+            <p class="case-tag before">Было</p>
+            <p class="case-text">Брак и пересорт в каждой партии. Поставщики «компенсировали» в следующей. Маркировку делал в России — считал это нормой.</p>
+          </div>
+          <div class="case-col case-col-after">
+            <p class="case-tag after">Стало</p>
+            <p class="case-text">Новые поставщики с контролем качества, отбраковка прямо в Китае. Упаковка и маркировка на фабрике. <strong>Товар приходит готовым к отправке. Себестоимость снизилась.</strong></p>
+          </div>
+        </div>
+        <p class="case-niche"><strong>Ниша:</strong> OEM под собственным брендом, розница</p>
+      </div>
+    </div>
+
+    <div class="alert" style="font-size:15px;">
+      Немецкий технологический стартап — нестандартное производство под ключ, жёсткие сроки. <strong>Сэкономлено 30 000 евро</strong> относительно альтернативных предложений при том же результате.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ЦИТАТЫ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Что говорят клиенты</h2>
+    <p class="section-lead">Не отзывы ради отзывов — конкретные слова конкретных людей.</p>
+
+    <div class="reviews-slider reveal" id="reviewsSlider">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-slide"><img src="img/proofs/review-2.png" alt="Отзыв Марии Г. — полный цикл поставки" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-1.png" alt="Отзыв клиента — оперативно и профессионально" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-7.jpg" alt="Отзыв клиента — благодарность команде" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-4.jpg" alt="Отзыв клиента — таможня без проблем" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-5.jpg" alt="Отзыв — профессионал своего дела" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-6.jpg" alt="Отзыв — потрясающее решение" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-8.jpg" alt="Отзыв — груз получили безупречно" loading="lazy"></div>
+        <div class="review-slide"><img src="img/proofs/review-3.jpg" alt="Отзыв — спасибо за курс" loading="lazy"></div>
+      </div>
+      <button class="slider-btn slider-prev" aria-label="Предыдущий">&#8249;</button>
+      <button class="slider-btn slider-next" aria-label="Следующий">&#8250;</button>
+      <div class="slider-dots" id="reviewsDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ЭКСПЕРТ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Кто ведёт воркшоп</h2>
+
+    <div class="expert-grid reveal">
+      <div>
+        <img src="img/alexandra-studio.jpg" alt="Александра Шумилова" class="expert-photo" style="border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.1);width:200px;">
+        <p class="expert-photo-caption" style="margin-top:8px;font-size:12px;color:hsl(var(--text-muted));text-align:center;"></p>
+        <div class="forum-photo" style="margin-top:16px;">
+          <img src="img/forum.jpg" alt="Кантонский экономический форум 2025" style="width:200px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.1);">
+          <p style="font-size:12px;color:hsl(var(--text-muted));margin-top:6px;text-align:center;line-height:1.4;">Кантонский экономический форум&nbsp;2025</p>
+        </div>
+      </div>
+      <div>
+        <p class="expert-name">Александра Шумилова</p>
+        <p class="expert-meta">Основатель Intelligent Supply Chain Limited (Гонконг)</p>
+
+        <div class="expert-story">
+          В 2014 году потеряла бизнес — партнёры предали, пришла в офис: ни документов, ни счетов, ни товара. В тот же день&nbsp;&mdash; налоговая, прокуратура, кредиторы. <strong>Уехала в Китай.</strong> Несколько лет работала переводчиком на китайских фабриках — видела изнутри, как оформляют (и не оформляют) документы, что значит «всё нормально» на самом деле. Из этого опыта выросла система.
+        </div>
+
+        <ul class="expert-facts">
+          <li><strong><span data-count="18">0</span> лет в ВЭД с Китаем</strong> — с 2007 года, начинала как переводчик на деловых переговорах</li>
+          <li><strong>Живёт в Китае <span data-count="10" data-suffix="+">0</span> лет.</strong> Свободный китайский — читает контракты в оригинале</li>
+          <li><strong><span data-count="200" data-suffix="+">0</span> клиентов</strong> перешли к управляемому импорту</li>
+          <li>Экономист, специализация — международный бизнес</li>
+          <li>Участник <strong>Кантонского экономического форума 2025</strong></li>
+          <li>30 000 евро сэкономлено при организации поставки для немецкого стартапа</li>
+          <li>−20–30% себестоимости на проекте в России на китайских комплектующих</li>
+          <li>30+ поставщиков в цепочке — для европейской сети мобильных аксессуаров</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ КОМУ НЕ ПОДОЙДЁТ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Кому подойдёт — и кому нет</h2>
+    <p class="section-lead">Прочитайте честно, прежде чем регистрироваться.</p>
+
+    <div class="notfor-grid reveal">
+      <div class="notfor-block no">
+        <p class="notfor-title">✕ Не для вас, если</p>
+        <ul class="notfor-list">
+          <li>Ищете схему «возить дёшево и никому не объяснять» — мы работаем с официальными схемами</li>
+          <li>Хотите, чтобы кто-то сделал всё за вас — воркшоп даёт понимание, не сопровождение</li>
+          <li>Уже всё знаете и хотите проверить чужой контент</li>
+          <li>Не готовы смотреть на свою схему честно — иногда результат диагностики неприятный</li>
+        </ul>
+      </div>
+      <div class="notfor-block yes">
+        <p class="notfor-title">✓ Для вас, если</p>
+        <ul class="notfor-list">
+          <li>Везёте из Китая сейчас — и где-то в голове живёт тревога «а вдруг что-то не так»</li>
+          <li>Работаете через карго или посредников и хотите понять: это риск или нормальная практика</li>
+          <li>Планируете переход на белый ввоз, но не понимаете с чего начать и сколько это стоит</li>
+          <li>Покупали курсы по ВЭД, но так и не получили ощущение контроля</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="reveal">Частые вопросы</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item active">
+        <div class="faq-question">Это теория или практика?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Это внедрение. Вы работаете с реальными инструментами: таблица расчёта себестоимости, шаблоны документов, чек-листы проверки. Каждый этап привязан к конкретным действиям с вашим товаром, вашим поставщиком, вашей сделкой.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">У меня уже есть поставщик. Зачем мне это?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Именно для этого. Вы сможете проверить текущего поставщика по системе критериев, оценить безопасность вашей схемы и увидеть, где скрыты риски — до того, как они станут проблемой.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">У меня уже едет груз. Не поздно?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Нет. Текущую поставку завершите как есть. Следующую — выстроите через систему. Чем раньше увидите полную картину, тем меньше цена ошибок в будущих сделках.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Подойдёт ли для моей ниши?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">СКИ работает с логикой импорта, а не с товарной категорией. Принципы выбора поставщика, проверки, расчёта себестоимости, оформления документов — одинаковы для одежды, оборудования, бытовых товаров. Среди клиентов — предприниматели из десятков разных категорий.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Что если я уже работаю официально?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Тогда вы сможете проверить, действительно ли ваша схема закрывает все риски. Практика показывает: многие, кто уверен в «белом ввозе», при проверке обнаруживают слабые места — в документах, в схеме оплаты, в распределении ответственности.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Это бесплатно? В чём подвох?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Подвоха нет. Воркшоп бесплатный. В конце второго дня расскажем о программе продолжения — для тех, кто захочет внедрять систему с сопровождением. Но это отдельное решение, без давления. Большинство уйдёт с инструментами и будет применять самостоятельно.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ФИНАЛЬНЫЙ CTA ══════════ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Воркшоп бесплатный.<br>Риски в вашем импорте&nbsp;&mdash; нет.</h2>
+    <p>28&nbsp;и&nbsp;29&nbsp;марта. Zoom. ~2&nbsp;часа каждый день.</p>
+    <p class="cta-detail">Регистрация через Telegram&nbsp;&mdash; там же придут ссылки, чек-лист и 20&nbsp;вопросов.</p>
+
+    <a href="https://t.me/AShumilova_bot?start=landing" class="btn">Зарегистрироваться</a>
+
+    <p class="final-note">
+      Это рабочая встреча, не вебинар с продажей. Если после захотите продолжить&nbsp;&mdash; расскажем. Если нет&nbsp;&mdash; уйдёте с инструментами.<br><br>
+      <a href="https://alexandra-ved-longread.vercel.app?utm_source=landing&utm_medium=link&utm_campaign=workshop">Хочу сначала прочитать подробнее →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 WhiteWayChina&nbsp;&middot;&nbsp;Александра Шумилова&nbsp;&middot;&nbsp;<a href="https://t.me/shumilovachina">@shumilovachina</a>&nbsp;&middot;&nbsp;<a href="https://whitewaychina.com">whitewaychina.com</a></p>
+  </div>
+</footer>
+
+<!-- ══════════ STICKY MOBILE ══════════ -->
+<div class="sticky-cta">
+  <a href="https://t.me/AShumilova_bot?start=landing" class="btn">Зарегистрироваться на воркшоп</a>
+</div>
+
+<!-- ══════════ SCROLL TO TOP ══════════ -->
+<style>
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 9001;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .3s, transform .3s, background .2s, box-shadow .2s;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  background: hsl(var(--primary));
+  box-shadow: 0 6px 24px hsl(var(--primary) / 0.4);
+}
+.scroll-top:hover svg {
+  stroke: #fff;
+}
+.scroll-top svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: hsl(var(--text)); stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke .2s;
+}
+@media (max-width: 768px) {
+  .scroll-top { bottom: 80px; left: 16px; width: 42px; height: 42px; }
+}
+</style>
+<button class="scroll-top" id="scrollTop" aria-label="Наверх">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ══════════ FLOATING TELEGRAM ══════════ -->
+<style>
+.tg-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .4s, transform .4s;
+  pointer-events: none;
+}
+.tg-float.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.tg-float-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(10px) scale(.95);
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+}
+.tg-float-menu.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.tg-float-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: hsl(var(--text));
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition: box-shadow .2s, transform .15s;
+}
+.tg-float-menu a:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.tg-menu-icon {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.tg-menu-icon.bot { background: hsl(var(--primary)); }
+.tg-menu-icon.channel { background: #2AABEE; }
+.tg-menu-icon svg { width: 18px; height: 18px; fill: #fff; }
+.tg-menu-text { display: flex; flex-direction: column; }
+.tg-menu-label { font-weight: 600; font-size: 13px; }
+.tg-menu-desc { font-size: 11px; color: hsl(var(--text-muted)); }
+.tg-fab {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #2AABEE;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(42,171,238,.4);
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+}
+.tg-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(42,171,238,.5);
+}
+.tg-fab svg {
+  width: 28px; height: 28px;
+  fill: #fff;
+  transition: transform .25s;
+}
+.tg-fab.open svg { transform: rotate(45deg) scale(.85); }
+.tg-fab::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(42,171,238,.4);
+  animation: tg-pulse 2.5s ease-out infinite;
+}
+.tg-fab.open::after { animation: none; opacity: 0; }
+@keyframes tg-pulse {
+  0% { transform: scale(1); opacity: .6; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+.tg-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 8999;
+  background: rgba(0,0,0,.15);
+}
+.tg-backdrop.open { display: block; }
+@media (max-width: 600px) {
+  .tg-float { bottom: 80px; right: 16px; }
+  .tg-fab { width: 50px; height: 50px; }
+  .tg-fab svg { width: 24px; height: 24px; }
+  .tg-float-menu a { font-size: 13px; padding: 9px 14px; }
+}
+@media print { .tg-float, .tg-backdrop, .scroll-top { display: none !important; } }
+</style>
+
+<div class="tg-backdrop" id="tgBackdrop"></div>
+<div class="tg-float" id="tgFloat">
+  <div class="tg-float-menu" id="tgMenu">
+    <a href="https://t.me/AShumilova_bot?start=landing" target="_blank" onclick="ym(102625647,'reachGoal','fab_bot_click')">
+      <span class="tg-menu-icon bot">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+      </span>
+      <span class="tg-menu-text">
+        <span class="tg-menu-label">Задать вопрос / регистрация</span>
+        <span class="tg-menu-desc">Бот ответит и запишет на воркшоп</span>
+      </span>
+    </a>
+    <a href="https://t.me/shumilovachina" target="_blank" onclick="ym(102625647,'reachGoal','fab_channel_click')">
+      <span class="tg-menu-icon channel">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </span>
+      <span class="tg-menu-text">
+        <span class="tg-menu-label">Канал Александры</span>
+        <span class="tg-menu-desc">Быть в курсе и не пропустить</span>
+      </span>
+    </a>
+  </div>
+  <button class="tg-fab" id="tgFab" aria-label="Telegram">
+    <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+  </button>
+</div>
+
+<script>
+/* ── Scroll reveal ── */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+    els.forEach(function(el){ obs.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+
+/* ── Parallax on scroll ── */
+(function(){
+  var hero = document.querySelector('.hero');
+  if(!hero) return;
+  window.addEventListener('scroll', function(){
+    var y = window.pageYOffset;
+    hero.style.backgroundPositionY = (y * 0.3) + 'px';
+  }, {passive: true});
+})();
+</script>
+
+<script>
+(function(){
+  var target = new Date('2026-03-28T12:00:00+03:00').getTime();
+  var el = document.getElementById('countdown');
+  function update(){
+    var now = Date.now();
+    var diff = target - now;
+    if(diff <= 0){ el.textContent = 'Уже идёт!'; return; }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var parts = [];
+    if(d > 0) parts.push(d + 'д');
+    parts.push(h + 'ч');
+    parts.push(m + 'м');
+    parts.push(s + 'с');
+    el.textContent = parts.join(' ');
+  }
+  update();
+  setInterval(update, 1000);
+})();
+
+/* ── Scroll to top ── */
+(function(){
+  var btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }, {passive:true});
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+
+/* ── Floating Telegram ── */
+(function(){
+  var fab = document.getElementById('tgFab');
+  var menu = document.getElementById('tgMenu');
+  var float = document.getElementById('tgFloat');
+  var backdrop = document.getElementById('tgBackdrop');
+  var isOpen = false;
+  function toggle(){
+    isOpen = !isOpen;
+    fab.classList.toggle('open', isOpen);
+    menu.classList.toggle('open', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+  }
+  fab.addEventListener('click', toggle);
+  backdrop.addEventListener('click', toggle);
+  var shown = false;
+  function checkScroll(){
+    if(!shown && window.scrollY > window.innerHeight * 0.5){
+      float.classList.add('visible');
+      shown = true;
+    }
+  }
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  checkScroll();
+})();
+
+/* ── Counter animation ── */
+(function(){
+  var counters = document.querySelectorAll('[data-count]');
+  if(!counters.length) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var end = parseInt(el.getAttribute('data-count'));
+      var suffix = el.getAttribute('data-suffix') || '';
+      var prefix = el.getAttribute('data-prefix') || '';
+      var duration = 1500;
+      var start = 0;
+      var t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0) / duration, 1);
+        var ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.floor(start + (end - start) * ease) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      obs.unobserve(el);
+    });
+  }, {threshold: 0.5});
+  counters.forEach(function(c){ obs.observe(c); });
+})();
+</script>
+
+<script>
+(function(){
+  var track = document.getElementById('reviewsTrack');
+  var slides = track.querySelectorAll('.review-slide');
+  var dotsWrap = document.getElementById('reviewsDots');
+  var cur = 0;
+  var total = slides.length;
+  var autoTimer;
+
+  slides.forEach(function(_,i){
+    var d = document.createElement('button');
+    d.className = 'slider-dot' + (i===0?' active':'');
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n){
+    cur = (n + total) % total;
+    slides.forEach(function(s){ s.style.transform = 'translateX(-' + cur*100 + '%)'; });
+    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
+      d.classList.toggle('active', i===cur);
+    });
+    resetAuto();
+  }
+
+  document.querySelector('.slider-prev').addEventListener('click', function(){ goTo(cur-1); });
+  document.querySelector('.slider-next').addEventListener('click', function(){ goTo(cur+1); });
+
+  function resetAuto(){ clearInterval(autoTimer); autoTimer = setInterval(function(){ goTo(cur+1); }, 4000); }
+  resetAuto();
+
+  var slider = document.getElementById('reviewsSlider');
+  var sx, dx;
+  slider.addEventListener('touchstart', function(e){ sx=e.touches[0].clientX; dx=0; }, {passive:true});
+  slider.addEventListener('touchmove', function(e){ dx=e.touches[0].clientX-sx; }, {passive:true});
+  slider.addEventListener('touchend', function(){ if(Math.abs(dx)>40){ goTo(cur+(dx<0?1:-1)); } });
+})();
+</script>
+
+<script>
+/* ── FAQ accordion ── */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.parentElement;
+      var wasActive = item.classList.contains('active');
+      item.closest('.faq-list').querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('active'); });
+      if(!wasActive) item.classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>
