@@ -1126,6 +1126,67 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 .final-note a { color: rgba(255,255,255,.65); text-decoration: underline; }
 .final-note a:hover { color: #fff; }
 
+/* ── POPUP FORM ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.popup-overlay.active { display: flex; }
+.popup-card {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background: hsl(225 20% 12%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px;
+  padding: 40px 36px;
+  animation: popupIn .3s ease-out;
+}
+@keyframes popupIn {
+  from { opacity: 0; transform: translateY(20px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255,255,255,.08);
+  border-radius: 50%;
+  color: rgba(255,255,255,.6);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+.popup-close:hover { background: rgba(255,255,255,.15); color: #fff; }
+.popup-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.popup-card .popup-sub {
+  text-align: center;
+  font-size: 16px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 28px;
+}
+
 /* ── REGISTRATION FORM ── */
 .registration-section {
   padding: 80px 0;
@@ -1340,7 +1401,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <img src="img/alexandra-cutout.png" alt="Александра Шумилова">
           <p class="hero-author">Александра Шумилова<br>18&nbsp;лет в ВЭД с Китаем&nbsp;&middot;&nbsp;200+ клиентов</p>
         </div>
-        <a href="#register" class="btn hero-btn" onclick="ym(102625647,'reachGoal','cta_click')">Зарегистрироваться на воркшоп</a>
+        <a href="#" class="btn hero-btn open-popup-form">Зарегистрироваться на воркшоп</a>
         <p class="hero-cta-note">
           <svg class="hero-tg-icon" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
           Регистрация через Telegram — там&nbsp;же ответы на&nbsp;вопросы и&nbsp;бонус сразу&nbsp;после&nbsp;регистрации
@@ -1451,7 +1512,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     </div>
 
     <div class="section-cta">
-      <a href="#register" class="btn" onclick="ym(102625647,'reachGoal','cta_click')">Зарегистрироваться — это бесплатно</a>
+      <a href="#" class="btn open-popup-form">Зарегистрироваться — это бесплатно</a>
     </div>
   </div>
 </section>
@@ -1513,7 +1574,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
       <div class="honest-note" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);margin-top:0;">
         <strong style="color:rgba(255,255,255,0.85);">Честно про конец дня 2:</strong> расскажем о программе продолжения — для тех, кто захочет внедрять систему с поддержкой. Но это отдельное решение, без давления. Большинство уйдёт с инструментами и будет применять самостоятельно.
       </div>
-      <a href="#register" class="btn hero-btn" style="margin:0;white-space:nowrap;display:flex;align-items:center;justify-content:center;width:100%;" onclick="ym(102625647,'reachGoal','cta_click')">Принять участие</a>
+      <a href="#" class="btn hero-btn open-popup-form" style="margin:0;white-space:nowrap;display:flex;align-items:center;justify-content:center;width:100%;">Принять участие</a>
     </div>
   </div>
 </section>
@@ -1553,7 +1614,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
         <div class="why-now-secret-icon"><svg viewBox="0 0 48 48" width="48" height="48" fill="none"><polygon points="24,4 44,24 24,44 4,24" stroke="hsl(var(--gold))" stroke-width="1.5"/><polygon points="24,14 34,24 24,34 14,24" stroke="hsl(var(--gold))" stroke-width="2" fill="hsl(var(--gold) / 0.1)"/></svg></div>
         <h3>Секретный бонус&nbsp;&mdash; для&nbsp;участников СКИ</h3>
         <p>Заполните анкету на воркшопе и&nbsp;присоединитесь к&nbsp;программе&nbsp;&mdash; бонус ждёт вас внутри.</p>
-        <a href="#register" class="btn hero-btn why-now-btn" onclick="ym(102625647,'reachGoal','cta_click')">Принять участие</a>
+        <a href="#" class="btn hero-btn why-now-btn open-popup-form">Принять участие</a>
       </div>
 
     </div>
@@ -1789,7 +1850,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 
 <!-- ══════════ STICKY MOBILE ══════════ -->
 <div class="sticky-cta">
-  <a href="#register" class="btn" onclick="ym(102625647,'reachGoal','cta_click')">Зарегистрироваться на воркшоп</a>
+  <a href="#" class="btn open-popup-form">Зарегистрироваться на воркшоп</a>
 </div>
 
 <!-- ══════════ SCROLL TO TOP ══════════ -->
@@ -2158,45 +2219,120 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   });
 })();
 
-// ── REGISTRATION FORM ──
+// ── REGISTRATION FORM (shared logic) ──
+function submitRegForm(formEl, btnEl, successEl) {
+  var name = formEl.querySelector('[name="name"]').value.trim();
+  var email = formEl.querySelector('[name="email"]').value.trim();
+  var telegram = formEl.querySelector('[name="telegram"]').value.trim();
+
+  if (!email || email.indexOf('@') === -1) return;
+
+  btnEl.disabled = true;
+  btnEl.textContent = 'Отправляем...';
+
+  fetch('/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, telegram: telegram })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.ok) {
+      formEl.style.display = 'none';
+      successEl.style.display = 'block';
+      ym(102625647, 'reachGoal', 'registration_complete');
+    } else {
+      throw new Error(data.error || 'Ошибка');
+    }
+  })
+  .catch(function() {
+    btnEl.disabled = false;
+    btnEl.textContent = 'Зарегистрироваться — это бесплатно';
+    alert('Не удалось отправить. Попробуйте ещё раз или напишите в Telegram: @shumilovachina');
+  });
+}
+
+// Bottom form
 (function(){
   var form = document.getElementById('regForm');
   if (!form) return;
-
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var btn = document.getElementById('regSubmitBtn');
-    var name = document.getElementById('regName').value.trim();
-    var email = document.getElementById('regEmail').value.trim();
-    var telegram = document.getElementById('regTelegram').value.trim();
+    submitRegForm(form, document.getElementById('regSubmitBtn'), document.getElementById('regSuccess'));
+  });
+})();
 
-    if (!email || email.indexOf('@') === -1) return;
+// Popup form
+(function(){
+  var overlay = document.getElementById('popupOverlay');
+  var form = document.getElementById('popupRegForm');
+  if (!overlay || !form) return;
 
-    btn.disabled = true;
-    btn.textContent = 'Отправляем...';
-
-    fetch('/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, telegram: telegram })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data.ok) {
-        document.getElementById('regForm').style.display = 'none';
-        document.getElementById('regSuccess').style.display = 'block';
-        ym(102625647, 'reachGoal', 'registration_complete');
-      } else {
-        throw new Error(data.error || 'Ошибка');
-      }
-    })
-    .catch(function() {
-      btn.disabled = false;
-      btn.textContent = 'Зарегистрироваться — это бесплатно';
-      alert('Не удалось отправить. Попробуйте ещё раз или напишите в Telegram: @shumilovachina');
+  // Open popup on CTA click
+  document.querySelectorAll('.open-popup-form').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      ym(102625647, 'reachGoal', 'cta_click');
     });
+  });
+
+  // Close popup
+  function closePopup() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  overlay.querySelector('.popup-close').addEventListener('click', closePopup);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closePopup();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePopup();
+  });
+
+  // Submit popup form
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitRegForm(form, document.getElementById('popupSubmitBtn'), document.getElementById('popupSuccess'));
   });
 })();
 </script>
+
+<!-- ══════════ POPUP FORM HTML ══════════ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-card">
+    <button class="popup-close" aria-label="Закрыть">&times;</button>
+    <h3>Регистрация на воркшоп</h3>
+    <p class="popup-sub">28–29 марта · Zoom · Бесплатно</p>
+
+    <form id="popupRegForm" class="reg-form" onsubmit="return false;">
+      <div class="form-group">
+        <label for="popupName">Имя</label>
+        <input type="text" id="popupName" name="name" placeholder="Как к вам обращаться" required>
+      </div>
+      <div class="form-group">
+        <label for="popupEmail">Email <span class="required">*</span></label>
+        <input type="email" id="popupEmail" name="email" placeholder="На него придёт ссылка на Zoom" required>
+      </div>
+      <div class="form-group">
+        <label for="popupTg">Telegram <span class="optional">(необязательно)</span></label>
+        <input type="text" id="popupTg" name="telegram" placeholder="@username или номер">
+      </div>
+      <button type="submit" class="btn hero-btn reg-submit-btn" id="popupSubmitBtn">Зарегистрироваться — это бесплатно</button>
+      <p class="form-note">Ваши данные в безопасности. Никакого спама.</p>
+    </form>
+
+    <div id="popupSuccess" class="reg-success" style="display:none;">
+      <div class="success-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="hsl(43 85% 47%)" stroke-width="3"/><path d="M20 33l8 8 16-16" stroke="hsl(43 85% 47%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 style="font-size:24px;">Вы зарегистрированы!</h3>
+      <p style="font-size:16px;">Ссылка на Zoom придёт на вашу почту.</p>
+      <p style="margin-top:12px;"><a href="https://t.me/AShumilova_bot?start=landing" target="_blank" style="color:hsl(228 80% 70%);font-size:15px;">Также подключите бота в Telegram →</a></p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
