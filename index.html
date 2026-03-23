@@ -1285,9 +1285,8 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 .footer {
   background: hsl(var(--bg-dark));
   color: rgba(255,255,255,.4);
-  padding: 40px 0;
-  text-align: center;
-  font-size: 13px;
+  padding: 48px 0 40px;
+  font-size: 14px;
   position: relative;
 }
 .footer::before {
@@ -1297,7 +1296,51 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   height: 1px;
   background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
 }
-.footer a { color: rgba(255,255,255,.6); }
+.footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+.footer a:hover { color: rgba(255,255,255,.85); }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.footer-company {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.4);
+}
+.footer-company strong {
+  color: rgba(255,255,255,.6);
+  font-weight: 600;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.footer-tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  transition: all .2s;
+}
+.footer-tg:hover { border-color: rgba(255,255,255,.25); color: #fff; }
+.footer-tg svg { width: 18px; height: 18px; fill: rgba(255,255,255,.5); }
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,.3);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
 
 /* ── STICKY MOBILE ── */
 @media (max-width: 768px) {
@@ -1844,7 +1887,25 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 <!-- ══════════ FOOTER ══════════ -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 WhiteWayChina&nbsp;&middot;&nbsp;Александра Шумилова&nbsp;&middot;&nbsp;<a href="https://t.me/shumilovachina">@shumilovachina</a>&nbsp;&middot;&nbsp;<a href="https://whitewaychina.com">whitewaychina.com</a></p>
+    <div class="footer-top">
+      <div class="footer-company">
+        <strong>ИП Шумилова Александра Николаевна</strong><br>
+        ИНН: 423009623432
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div class="footer-links">
+          <a href="https://whitewaychina.com/politika-konfidentsialnosti" target="_blank">Политика конфиденциальности</a>
+          <a href="https://whitewaychina.com/oferta" target="_blank">Публичная оферта</a>
+        </div>
+        <a href="https://t.me/shumilovachina" target="_blank" class="footer-tg">
+          <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          @shumilovachina
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 WhiteWayChina&nbsp;&middot;&nbsp;<a href="https://whitewaychina.com">whitewaychina.com</a>
+    </div>
   </div>
 </footer>
 
