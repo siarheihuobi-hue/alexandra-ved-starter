@@ -2273,9 +2273,8 @@ function submitRegForm(formEl, btnEl, successEl) {
   .then(function(r) { return r.json(); })
   .then(function(data) {
     if (data.ok) {
-      formEl.style.display = 'none';
-      successEl.style.display = 'block';
       ym(102625647, 'reachGoal', 'registration_complete');
+      window.location.href = '/thanks.html';
     } else {
       throw new Error(data.error || 'Ошибка');
     }
