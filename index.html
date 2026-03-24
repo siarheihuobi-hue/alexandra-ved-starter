@@ -177,12 +177,13 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 60px;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
   align-items: center;
   position: relative;
   z-index: 3;
   min-height: 100vh;
+  padding: 80px 0;
 }
 .hero-pills {
   display: flex;
@@ -194,12 +195,13 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 .hero-pill {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  color: rgba(255,255,255,.9);
-  border: 1.5px solid hsl(var(--primary));
-  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: rgba(255,255,255,.85);
+  border: 1.5px solid hsl(var(--primary) / 0.5);
+  background: hsl(var(--primary) / 0.08);
+  padding: 9px 22px;
   border-radius: 24px;
   white-space: nowrap;
 }
@@ -230,23 +232,24 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 72px;
+  font-size: 68px;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.0;
   color: #fff;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   letter-spacing: -.02em;
   text-transform: uppercase;
 }
 .hero h1 em {
-  color: hsl(var(--primary));
+  color: hsl(var(--primary-light));
   font-style: normal;
   display: block;
-  font-size: .55em;
-  line-height: 1.3;
-  margin-top: 12px;
-  letter-spacing: 0;
+  font-size: .52em;
+  line-height: 1.35;
+  margin-top: 14px;
+  letter-spacing: .01em;
   text-transform: none;
+  font-weight: 400;
 }
 .hero-sub {
   font-size: 20px;
@@ -267,20 +270,22 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   margin-bottom: 36px;
 }
 .hero-benefits li {
-  font-size: 17px;
-  color: rgba(255,255,255,.9);
-  padding: 8px 0 8px 36px;
+  font-size: 18px;
+  color: rgba(255,255,255,.85);
+  padding: 10px 0 10px 40px;
   position: relative;
   line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
+.hero-benefits li:last-child { border-bottom: none; }
 .hero-benefits li::before {
   content: '';
   position: absolute;
-  left: 0; top: 14px;
-  width: 14px; height: 14px;
+  left: 0; top: 17px;
+  width: 16px; height: 16px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f0c040 40%, rgba(240,192,64,.3) 100%);
-  box-shadow: 0 0 8px rgba(240,192,64,.4);
+  background: radial-gradient(circle, #f0c040 40%, rgba(240,192,64,.25) 100%);
+  box-shadow: 0 0 10px rgba(240,192,64,.5);
 }
 .hero-bonuses-title {
   font-family: 'Space Grotesk', sans-serif;
@@ -292,29 +297,30 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   letter-spacing: .05em;
 }
 .hero-cards {
-  display: inline-flex;
-  gap: 12px;
-  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
 }
 .hero-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 12px;
-  padding: 16px 18px;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 18px 16px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
 }
 .hero-card-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
   margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: .02em;
+  letter-spacing: .04em;
 }
 .hero-card p {
-  font-size: 14px;
-  color: rgba(255,255,255,.7);
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
   line-height: 1.45;
 }
 .hero-card--highlight {
@@ -357,20 +363,24 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   100% { left: 150%; }
 }
 .hero-author {
-  font-size: 13px;
-  color: rgba(255,255,255,.5);
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
   text-align: center;
-  line-height: 1.5;
-  margin-top: 12px;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  width: 100%;
 }
 .hero-btn {
   margin-top: 0;
-  padding: 24px 40px;
-  font-size: 22px;
+  padding: 22px 32px;
+  font-size: 20px;
   animation: btn-pulse 2s ease-in-out infinite;
   width: 100%;
-  margin-right: 20px;
-  align-self: flex-end;
   color: #000;
   text-shadow: none;
   text-align: center;
@@ -383,10 +393,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   50% { box-shadow: 0 8px 36px rgba(240,192,64,.65), 0 0 50px rgba(240,192,64,.2); transform: scale(1.03); }
 }
 .hero-cta-note {
-  margin-top: 14px;
-  margin-right: 20px;
-  font-size: 13px;
-  color: rgba(255,255,255,.65);
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
   line-height: 1.5;
   text-align: center;
   display: flex;
@@ -407,22 +416,22 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: end;
-  margin-bottom: 100px;
+  gap: 0;
 }
 .hero-photo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .hero-photo img {
-  max-width: 570px;
-  width: 150%;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   filter: brightness(1.05) contrast(1.02);
   position: relative;
   z-index: 4;
-  transform-origin: bottom right;
-  margin-left: -90px;
+  display: block;
 }
 
 /* ── WOW EFFECTS ── */
