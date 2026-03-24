@@ -693,6 +693,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 .benefit-note { font-size: 13px; color: hsl(var(--primary)); font-weight: 600; margin-top: 4px; }
 
 .section-cta { text-align: center; margin-top: 12px; }
+.benefits-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
+.benefits-header h2 { margin-bottom: 8px; }
+.benefits-header .section-lead { margin-bottom: 0; }
 .section-cta .btn {
   padding: 35px 48px;
   font-size: 25px;
@@ -1705,8 +1708,13 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 <!-- ══════════ ЧТО ПОЛУЧИТЕ ══════════ -->
 <section class="section section-dark">
   <div class="container">
-    <h2 class="reveal">За 2 дня — конкретный план перехода</h2>
-    <p class="section-lead">Не теория. Живая диагностика вашей ситуации и пошаговый разбор.</p>
+    <div class="benefits-header reveal">
+      <div>
+        <h2>За 2 дня — конкретный план перехода</h2>
+        <p class="section-lead">Не теория. Живая диагностика вашей ситуации и пошаговый разбор.</p>
+      </div>
+      <a href="#" class="btn open-popup-form" style="flex-shrink:0;align-self:center;">Зарегистрироваться — это бесплатно</a>
+    </div>
 
     <div class="benefits reveal">
       <div class="benefit reveal-delay-1">
@@ -1750,9 +1758,6 @@ a { color: hsl(var(--primary)); text-decoration: none; }
       </div>
     </div>
 
-    <div class="section-cta">
-      <a href="#" class="btn open-popup-form">Зарегистрироваться — это бесплатно</a>
-    </div>
   </div>
 </section>
 
