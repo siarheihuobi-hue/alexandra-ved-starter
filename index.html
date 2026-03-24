@@ -299,10 +299,14 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   letter-spacing: .05em;
 }
 .hero-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 10px;
   margin-bottom: 32px;
+  width: fit-content;
+}
+.hero-card {
+  width: 200px;
+  flex-shrink: 0;
 }
 .hero-card {
   background: rgba(255,255,255,.05);
