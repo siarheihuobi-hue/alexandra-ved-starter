@@ -1529,10 +1529,17 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .hero-container { padding: 0 20px; }
   .container { padding: 0 20px; }
   .hero-inner { grid-template-columns: 1fr; gap: 0; min-height: auto; padding: 40px 0 0; }
-  .hero-right { order: -1; margin-bottom: 24px; align-self: center; }
+  .hero-right { order: -1; margin-bottom: 24px; align-self: center; padding-top: 0; margin-top: 0; }
   .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; }
-  .hero-photo img { max-width: 220px; width: 100%; margin: 0 auto; margin-left: 0; }
-  .hero-btn { width: 100%; margin-right: 0; padding: 20px 16px; font-size: 18px; }
+  .hero-photo img { max-width: 220px; width: 100% !important; margin: 0 auto !important; }
+  .hero-author { margin-left: 0 !important; width: auto; }
+  .hero-btn { width: 100% !important; margin-left: 0 !important; margin-right: 0; margin-bottom: 10px !important; height: auto !important; padding: 20px 16px; font-size: 18px; }
+  .hero-tg-btn { width: 100% !important; margin-left: 0 !important; height: 60px !important; font-size: 16px !important; border-radius: 14px; }
+  .hero-cards { max-width: 100%; flex-direction: column; }
+  .hero-cards .hero-card:first-child,
+  .hero-cards .hero-card.hero-card--highlight,
+  .hero-card { flex: 1 1 auto !important; }
+  .hero-pretitle { font-size: 18px; }
   .hero::before { width: 280px; height: 280px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero::after { width: 255px; height: 255px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero h1 { font-size: 36px; }
@@ -1631,24 +1638,24 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 <!-- ══════════ БОЛЬ — УЗНАТЬ СЕБЯ ══════════ -->
 <section class="section section-dark">
   <div class="container">
-    <h2 class="reveal">Как выглядит карго на практике</h2>
-    <p class="section-lead">Это реальные истории. Все три объединяет одно: предприниматель платил, нёс риски — но не контролировал процесс.</p>
+    <h2 class="reveal">Частые ошибки при переходе на официальный импорт</h2>
+    <p class="section-lead">Это реальные ситуации клиентов. Все три объединяет одно: предприниматель решил перейти на белый ввоз — но без системы наступил на грабли.</p>
 
     <div class="pain-grid reveal">
       <div class="pain-card reveal-delay-1">
         <p class="pain-card-tag">Ситуация 1</p>
-        <h3>Груз задержан — никто не знает где</h3>
-        <p>Селлер возил кроссовки через карго. Партия застряла на складе — агент перестал выходить на связь. Три недели тишины. Итог: +40&nbsp;000₽ за хранение и сорванная поставка перед сезоном. При белом ввозе — контракт, накладная, трекинг. Есть что предъявить.</p>
+        <h3>Карго привёз «официально» — без документов</h3>
+        <p>Селлер возил кроссовки через карго. Начал переход на белый ввоз — обратился к тому же карго с запросом привезти официально. Те приняли оплату по безналу, привезли товар, но не выдали импортную декларацию. Разрешительных документов нет. Честный Знак сделан криво — пришлось перевыпускать за свой счёт. Маркетплейс запросил ввозную декларацию — предъявить нечего. Карточки товара заблокированы.</p>
       </div>
       <div class="pain-card reveal-delay-2">
         <p class="pain-card-tag">Ситуация 2</p>
-        <h3>На таможне остановили партию</h3>
-        <p>Предприниматель возил детские игрушки «по-серому». Таможня запросила сертификаты — их не было. Груз на СВХ две недели, конфискация 30% товара. Итог: потеря партии и репутации перед маркетплейсом из-за срыва отгрузки.</p>
+        <h3>Выбрал самого дешёвого брокера — груз застрял</h3>
+        <p>Предприниматель возил детские игрушки по-серому. При переходе на белый ввоз нашёл контору с самым низким ценником. Посчитали таможенное оформление — минимальная ставка. Пошёл в работу. Таможня отказала в выпуске: некорректный код ТН&nbsp;ВЭД и отсутствие сертификата соответствия. Груз на СВХ два месяца — пока возили образцы и выпускали сертификат. Итог: огромные расходы на хранение, срыв сроков, повторная подача декларации.</p>
       </div>
       <div class="pain-card reveal-delay-3">
         <p class="pain-card-tag">Ситуация 3</p>
-        <h3>Кабинет заморозили — документов нет</h3>
-        <p>WB запросил подтверждение легальности ввоза. При карго-схеме документов нет — только накладная от агента. Кабинет заморожен, товар на складе. При официальном импорте все документы на руках с первого дня.</p>
+        <h3>Решил привезти сам через ВТБ Шанхай</h3>
+        <p>Селлер возил бытовые товары карго. Решил перейти на белый ввоз самостоятельно: начитался статей, взял консультации. Договорился с поставщиком об оплате через ВТБ Шанхай. Отправил деньги — выяснилось, что счёт не фабрики, а агента. Фабрика не работает с ВТБ Шанхай напрямую. Пришлось подключать другие сервисы, чтобы вытащить деньги. Плюс у поставщика не оказалось экспортной лицензии — таможня запросила экспортную декларацию, которой нет. Итог: потеря времени, дополнительные расходы, затянутые сроки.</p>
       </div>
     </div>
 
@@ -1701,7 +1708,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     <p class="section-lead">Ответьте честно — по вашей последней поставке.</p>
 
     <div class="selfcheck reveal">
-      <p class="selfcheck-title">Вы возите через карго, если:</p>
+      <p class="selfcheck-title">Ваш белый ввоз в зоне риска, если:</p>
       <ol>
         <li>У вас нет прямого контракта с поставщиком в Китае</li>
         <li>Вы не видели экспортную декларацию на свой товар</li>
