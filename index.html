@@ -1516,55 +1516,28 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 }
 @media (min-width: 769px) { .sticky-cta { display: none; } }
 
-/* ── RESPONSIVE: TABLET (769–1200px) ── */
-@media (max-width: 1200px) and (min-width: 769px) {
-  .container { padding: 0 60px; }
-  .hero-container { padding: 0 60px; }
-  .hero-inner { grid-template-columns: 1fr 300px; gap: 32px; }
-  .hero h1 { font-size: 56px; }
-  .hero-pretitle { font-size: 22px; }
-  .hero-cards .hero-card:first-child,
-  .hero-cards .hero-card.hero-card--highlight,
-  .hero-card { flex: 1 1 auto !important; min-width: 0; }
-  .hero-btn { margin-left: -100px; width: calc(100% + 100px); height: 100px; font-size: 20px; margin-bottom: 60px; }
-  .hero-photo img { width: 120%; margin-left: -60px; }
-  .hero-author { margin-left: -60px; }
-  .program-days { gap: 20px; }
-}
-
-/* ── RESPONSIVE: MOBILE (≤768px) ── */
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   html { font-size: 16px; }
   .hero { min-height: auto; }
   .hero-container { padding: 0 20px; }
   .container { padding: 0 20px; }
   .hero-inner { grid-template-columns: 1fr; gap: 0; min-height: auto; padding: 40px 0 0; }
-  .hero-right { order: -1; margin-bottom: 24px; align-self: center; padding-top: 0; }
+  .hero-right { order: -1; margin-bottom: 24px; align-self: center; }
   .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; }
-  .hero-photo img { max-width: 220px; width: 100%; margin: 0 auto !important; }
-  .hero-author { margin-left: 0 !important; width: auto; }
-  .hero-btn { width: 100% !important; margin-left: 0 !important; margin-right: 0; margin-bottom: 20px !important; height: auto !important; padding: 20px 16px; font-size: 18px; }
+  .hero-photo img { max-width: 220px; width: 100%; margin: 0 auto; margin-left: 0; }
+  .hero-btn { width: 100%; margin-right: 0; padding: 20px 16px; font-size: 18px; }
   .hero::before { width: 280px; height: 280px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero::after { width: 255px; height: 255px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero h1 { font-size: 36px; }
   .hero h1 em { font-size: .75em; }
-  .hero-pretitle { font-size: 18px; }
   .hero-sub { font-size: 16px; }
-  .hero-benefits-title { font-size: 20px; }
-  .hero-benefits li { font-size: 17px; padding-left: 32px; }
-  .hero-bonuses-title { font-size: 20px; }
   .hero-pills { justify-content: center; }
   .hero-cta-wrap { justify-content: center; }
   .hero-cards { flex-direction: column; }
-  .hero-cards .hero-card:first-child,
-  .hero-cards .hero-card.hero-card--highlight,
-  .hero-card { flex: 1 1 auto !important; min-width: auto; }
-  .hero-card-title { font-size: 20px; }
-  .hero-card p { font-size: 16px; }
+  .hero-card { min-width: auto; }
   .pain-grid { grid-template-columns: 1fr; }
   .benefits { grid-template-columns: 1fr; }
-  .benefits-header { flex-direction: column !important; }
-  .benefits-header .btn { width: 100% !important; margin-left: 0 !important; }
   .program-bottom-row { grid-template-columns: 1fr !important; }
   .program-days { grid-template-columns: 1fr; }
   .program-day-header { padding: 16px 20px; }
@@ -1586,16 +1559,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .notfor-grid { grid-template-columns: 1fr; }
   .case-header { grid-template-columns: 1fr; }
   .case-col-before { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .section h2 { font-size: 28px; }
-  .section-lead { font-size: 17px; }
+  .section h2 { font-size: 32px; }
   .section { padding: 56px 0; }
   .final-cta { padding: 60px 0; }
-  .final-cta h2 { font-size: 24px; }
-  .popup-box { width: 95%; padding: 24px 20px; }
-  .faq-question { font-size: 18px; padding: 18px 48px 18px 20px; }
-  .faq-answer { padding: 0 20px 18px; font-size: 16px; }
-  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
-  .footer-links { justify-content: center; }
 }
 </style>
 </head>
@@ -1757,7 +1723,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     <h3 class="reveal" style="color:#fff;font-size:30px;margin-top:56px;margin-bottom:16px;">Как выглядит белый ввоз — полная цепочка</h3>
     <p class="section-lead">10&nbsp;шагов от контракта до получения груза. На&nbsp;воркшопе разберём каждый — на&nbsp;вашем примере.</p>
 
-    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:24px;margin-top:32px;">
+    <div class="reveal" style="display:flex;gap:24px;margin-top:32px;">
       <img src="img/white-import-flow-1.png" alt="Белый ввоз: контракт → оплата → производство → проверка → маркировка" style="flex:1;max-width:50%;border-radius:16px;border:1px solid rgba(255,255,255,0.08);" loading="lazy">
       <img src="img/white-import-flow-2.png" alt="Белый ввоз: экспорт → перевозка → таможня → доставка → получение" style="flex:1;max-width:50%;border-radius:16px;border:1px solid rgba(255,255,255,0.08);" loading="lazy">
     </div>
@@ -1875,7 +1841,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 
     <p class="program-format" style="color:rgba(255,255,255,0.5);">Zoom&nbsp;&middot;&nbsp;~2&nbsp;часа каждый день&nbsp;&middot;&nbsp;Живой эфир&nbsp;&middot;&nbsp;Осталось 27 мест</p>
     <div style="text-align:center;margin-top:28px;">
-      <a href="#" class="btn open-popup-form" style="width:100%;max-width:800px;height:180px;display:flex;align-items:center;justify-content:center;margin:24px auto 0;">Забронировать место</a>
+      <a href="#" class="btn open-popup-form" style="width:800px;height:180px;display:flex;align-items:center;justify-content:center;margin:24px auto 0;">Забронировать место</a>
     </div>
   </div>
 </section>
