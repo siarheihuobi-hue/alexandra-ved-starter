@@ -1530,8 +1530,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .container { padding: 0 20px; }
   .hero-inner { grid-template-columns: 1fr; gap: 0; min-height: auto; padding: 40px 0 0; }
   .hero-right { order: -1; margin-bottom: 24px; align-self: center; padding-top: 0; margin-top: 0; }
-  .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; }
+  .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; margin-left: 0 !important; }
   .hero-photo img { max-width: 220px; width: 100% !important; margin: 0 auto !important; display: block; }
+  .hero-right p[style*="margin-left"] { margin-left: 0 !important; width: 100% !important; }
   .hero-author { margin-left: 0 !important; width: auto; text-align: center; }
   .hero-btn { width: 100% !important; margin-left: 0 !important; margin-right: 0; margin-bottom: 10px !important; height: auto !important; padding: 20px 16px; font-size: 18px; }
   .hero-tg-btn { width: 100% !important; margin-left: 0 !important; height: 60px !important; font-size: 16px !important; border-radius: 14px; }
@@ -1589,10 +1590,10 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <span class="hero-pill">11–12 апреля 12:00 МСК</span>
           <span class="hero-pill">Онлайн</span>
           <span class="hero-pill"><strong>Бесплатно</strong></span>
-          <span class="hero-pill hero-pill--timer">Осталось <strong>27</strong> мест</span>
+          <span class="hero-pill hero-pill--timer">Места <strong>ограничены</strong></span>
         </div>
 
-        <p class="hero-pretitle">Решения для тех, кто переходит с карго на белый ввоз</p>
+        <p class="hero-pretitle">Бесплатный воркшоп 11–12 апреля</p>
         <h1>Карго&nbsp;&rarr; белый ввоз<em>Перейти без штрафов, переплат и&nbsp;остановки поставок</em></h1>
         <p class="hero-benefits-title">За 2 дня вы:</p>
         <ul class="hero-benefits">
@@ -1617,7 +1618,6 @@ a { color: hsl(var(--primary)); text-decoration: none; }
             <p>Пошаговая дорожная карта: от карго к белому ввозу</p>
           </div>
         </div>
-        <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:8px;margin-bottom:-30px;">Регистрация через Telegram — там&nbsp;же ответы на&nbsp;вопросы и&nbsp;бонус сразу&nbsp;после&nbsp;регистрации <svg style="display:inline-block;vertical-align:middle;width:32px;height:32px;animation:arrow-pulse 1.5s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
 
       </div>
       <div class="hero-right">
@@ -1625,11 +1625,13 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <img src="img/alexandra-cutout.png" alt="Александра Шумилова">
           <p class="hero-author">Александра Шумилова<br>18&nbsp;лет в ВЭД с Китаем&nbsp;&middot;&nbsp;200+ клиентов</p>
         </div>
-        <a href="#" class="btn hero-btn open-popup-form" style="flex-direction:column;gap:4px;">Зарегистрироваться<span style="font-size:13px;font-weight:400;opacity:.7;letter-spacing:0;">Если не получается в Telegram</span></a>
-        <a href="https://t.me/AShumilova_bot?start=landing" class="hero-tg-btn" target="_blank" style="margin-top:10px;margin-left:-180px;width:calc(100% + 140px);height:100px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:25px;font-family:'Space Grotesk',sans-serif;font-weight:700;background:hsl(228 70% 55%);color:#fff;border-radius:14px;text-decoration:none;transition:all .2s;">
-          <svg style="width:24px;height:24px;fill:#fff;" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+        <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn" target="_blank" style="gap:10px;margin-bottom:20px;">
+          <svg style="width:24px;height:24px;fill:#000;" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
           Зарегистрироваться в Telegram
         </a>
+        <p style="margin-top:8px;text-align:center;font-size:17px;margin-left:-180px;width:calc(100% + 140px);">
+          <a href="#" class="open-popup-form" style="color:hsl(228 80% 70%);text-decoration:underline;text-underline-offset:4px;">Нет Telegram? Зарегистрироваться по&nbsp;email&nbsp;&rarr;</a>
+        </p>
       </div>
     </div>
   </div>
@@ -1857,7 +1859,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 
     </div>
 
-    <p class="program-format" style="color:rgba(255,255,255,0.5);">Zoom&nbsp;&middot;&nbsp;~2&nbsp;часа каждый день&nbsp;&middot;&nbsp;Живой эфир&nbsp;&middot;&nbsp;Осталось 27 мест</p>
+    <p class="program-format" style="color:rgba(255,255,255,0.5);">Zoom&nbsp;&middot;&nbsp;~2&nbsp;часа каждый день&nbsp;&middot;&nbsp;Живой эфир&nbsp;&middot;&nbsp;Места ограничены</p>
     <div style="text-align:center;margin-top:28px;">
       <a href="#" class="btn open-popup-form" style="width:800px;height:180px;display:flex;align-items:center;justify-content:center;margin:24px auto 0;">Забронировать место</a>
     </div>
