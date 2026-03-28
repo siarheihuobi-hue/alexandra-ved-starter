@@ -311,6 +311,41 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 .hero-cards .hero-card.hero-card--highlight {
   flex: 1.5 1 0;
 }
+
+/* ── SECTION BONUSES ── */
+.section-bonuses {
+  background: hsl(var(--bg-dark));
+  padding: 40px 0 56px;
+  position: relative;
+}
+.section-bonuses::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,192,64,.25), transparent);
+}
+.bonuses-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.bonuses-grid {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+.bonuses-grid .hero-card:first-child { flex: 1 1 0; }
+.bonuses-grid .hero-card.hero-card--highlight { flex: 1.5 1 0; }
+.bonuses-grid .hero-card:last-child { flex: 1 1 0; }
+@media (max-width: 768px) {
+  .bonuses-grid { flex-direction: column; }
+}
+
 .hero-card {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
@@ -378,20 +413,6 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   60% { left: 150%; }
   100% { left: 150%; }
 }
-.hero-author {
-  font-size: 14px;
-  color: rgba(255,255,255,.6);
-  text-align: center;
-  line-height: 1.6;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: -50px;
-  padding: 10px 16px;
-  background: rgba(255,255,255,.05);
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.08);
-  width: 100%;
-}
 .hero-btn {
   margin-top: auto;
   margin-bottom: 0;
@@ -450,13 +471,13 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   margin-left: -70px;
 }
 .hero-photo img {
-  width: 140%;
+  width: 155%;
   max-width: none;
   height: auto;
   filter: brightness(1.05) contrast(1.02);
   position: relative;
   right: 0;
-  margin-left: -40%;
+  margin-left: -50%;
   z-index: 4;
   display: block;
 }
@@ -829,6 +850,80 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   text-align: center;
 }
 .honest-note strong { color: hsl(var(--text)); }
+
+/* ── FORMAT NOTE ── */
+.format-note {
+  background: hsl(228 70% 55% / 0.07);
+  border: 1px solid hsl(228 70% 55% / 0.2);
+  border-left: 3px solid hsl(228 70% 55% / 0.6);
+  border-radius: 0 14px 14px 0;
+  padding: 28px 32px;
+  margin: 40px 0 0;
+  position: relative;
+}
+.format-note-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: hsl(var(--primary-light));
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.format-note-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--primary-light));
+  flex-shrink: 0;
+}
+.format-note-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.format-note-body {
+  font-size: 19px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+.format-note-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.format-note-list li {
+  font-size: 18px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+.format-note-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 11px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: hsl(var(--primary-light) / 0.6);
+}
+@media (max-width: 768px) {
+  .format-note { padding: 20px 20px 20px 18px; }
+  .format-note-title { font-size: 19px; }
+  .format-note-body { font-size: 17px; }
+  .format-note-list li { font-size: 16px; }
+}
 
 /* ── WHY NOW ── */
 .why-now-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: stretch; }
@@ -1711,7 +1806,6 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; margin-left: 0 !important; }
   .hero-photo img { max-width: 220px; width: 100% !important; margin: 0 auto !important; display: block; }
   .hero-right p[style*="margin-left"] { margin-left: 0 !important; width: 100% !important; }
-  .hero-author { margin-left: 0 !important; width: auto; text-align: center; }
   .hero-btn { width: 100% !important; margin-left: 0 !important; margin-right: 0; margin-bottom: 10px !important; height: auto !important; padding: 20px 16px; font-size: 18px; }
   .hero-tg-btn { width: 100% !important; margin-left: 0 !important; height: 60px !important; font-size: 16px !important; border-radius: 14px; }
   .hero-cards { max-width: 100%; flex-direction: column; }
@@ -1723,7 +1817,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .hero::after { width: 255px; height: 255px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero h1 { font-size: 36px; }
   .hero h1 em { font-size: .75em; }
-  .hero-sub { font-size: 16px; }
+  .hero-sub { font-size: 18px; }
   .hero-pills { justify-content: center; }
   .hero-cta-wrap { justify-content: center; }
   .hero-cards { flex-direction: column; }
@@ -1742,9 +1836,9 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .why-now-grid { grid-template-columns: 1fr; }
   .why-now-secret-text { padding: 20px 20px 0; }
   .why-now-btn { margin: 16px 20px 20px; width: calc(100% - 40px); }
-  .slider-prev { left: 0; }
-  .slider-next { right: 0; }
-  .reviews-slider { max-width: 100%; padding: 0 44px; }
+  .slider-prev { left: 4px; }
+  .slider-next { right: 4px; }
+  .reviews-slider { max-width: 100%; padding: 0 44px; overflow: hidden; }
   .review-slide { min-width: 100%; }
   .review-slide-inner { opacity: 1; transform: scale(1); }
   .expert-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1768,10 +1862,123 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .registration-section .section-lead { font-size: 17px; margin-bottom: 32px; }
   .registration-section::after { width: 300px; height: 300px; }
   .reg-form-wrapper { padding: 32px 24px; margin: 0 8px; }
+  .section-cta .btn { width: 100%; padding: 18px 20px; font-size: 18px; }
+  .section-cta { padding-left: 0; padding-right: 0; }
+  .btn { max-width: 100%; box-sizing: border-box; }
+  .registration-section .btn,
+  .why-now-btn,
+  div[style*="text-align:center"] > .btn,
+  div[style*="text-align: center"] > .btn {
+    width: 100% !important;
+    padding: 18px 20px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* ── PRIVACY CHECKBOX ── */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.form-consent input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1.5px solid rgba(255,255,255,.25);
+  border-radius: 4px;
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  margin-top: 2px;
+  position: relative;
+  transition: border-color 150ms cubic-bezier(0.4,0,0.2,1), background 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.form-consent input[type="checkbox"]:checked {
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+.form-consent input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.form-consent label {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form-consent label a {
+  color: hsl(var(--primary-light));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.form-consent label a:hover { color: #fff; }
+
+/* ── COOKIE BANNER ── */
+#cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  background: hsl(220 20% 9%);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#cookieBanner p {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.5;
+  margin: 0;
+}
+#cookieBanner p a {
+  color: hsl(var(--primary-light));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#cookieBanner p a:hover { color: #fff; }
+#cookieAccept {
+  flex-shrink: 0;
+  background: hsl(var(--primary));
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms, transform 150ms;
+}
+#cookieAccept:hover { background: hsl(228 70% 63%); transform: translateY(-1px); }
+@media (max-width: 768px) {
+  #cookieBanner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 20px; padding-bottom: 80px; }
 }
 </style>
 </head>
 <body>
+<div id="cookieBanner" style="display:none;" role="banner">
+  <p>Мы используем cookies для аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="https://whitewaychina.ru/politika-konfidentsialnosti" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</p>
+  <button id="cookieAccept">Принять</button>
+</div>
+
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
@@ -1787,6 +1994,25 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 
         <p class="hero-pretitle">Бесплатный воркшоп 11–12 апреля</p>
         <h1>Карго&nbsp;&rarr; белый ввоз<em>Перейти без штрафов, переплат и&nbsp;остановки поставок</em></h1>
+        <p class="hero-sub" style="margin-bottom:32px;font-size:22px;color:rgba(255,255,255,.85);font-style:normal;max-width:100%;">с&nbsp;Александрой Шумиловой — <strong style="color:hsl(43 85% 47%);font-weight:700;">10&nbsp;лет живёт в&nbsp;Китае</strong>, ведёт переговоры с&nbsp;фабриками прямо&nbsp;сейчас</p>
+        <!-- SOCIAL PROOF STRIP -->
+        <div style="display:flex;gap:0;margin-bottom:28px;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;align-items:center;justify-content:flex-start;">
+          <div style="text-align:center;flex:0 0 auto;padding:0 20px 0 0;">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#f0c040;line-height:1.1;">200+</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;letter-spacing:.04em;text-transform:uppercase;">клиентов</div>
+          </div>
+          <div style="width:1px;height:36px;background:rgba(255,255,255,0.10);flex-shrink:0;"></div>
+          <div style="text-align:center;flex:0 0 auto;padding:0 20px;">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#f0c040;line-height:1.1;">18 лет</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;letter-spacing:.04em;text-transform:uppercase;">в ВЭД с Китаем</div>
+          </div>
+          <div style="width:1px;height:36px;background:rgba(255,255,255,0.10);flex-shrink:0;"></div>
+          <div style="text-align:center;flex:0 0 auto;padding:0 0 0 20px;">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#f0c040;line-height:1.1;">4 недели</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;letter-spacing:.04em;text-transform:uppercase;">до управляемого импорта</div>
+          </div>
+        </div>
+        <!-- /SOCIAL PROOF STRIP -->
         <p class="hero-benefits-title">За 2 дня вы:</p>
         <ul class="hero-benefits">
           <li>Поймете главные ошибки, которые допускают при переходе на белый ввоз</li>
@@ -1794,28 +2020,11 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <li>Получите 20 вопросов для проверки брокера и логиста</li>
         </ul>
 
-        <p class="hero-bonuses-title">Три бонуса за регистрацию</p>
-        <div class="hero-cards">
-          <div class="hero-card">
-            <p class="hero-card-title">Чек-лист диагностики</p>
-            <p>7 блоков: поставщик, документы, логистика, таможня, оплата</p>
-          </div>
-          <div class="hero-card hero-card--highlight">
-            <span class="hero-card-badge">Сразу после регистрации</span>
-            <p class="hero-card-title">20 вопросов агенту / логисту</p>
-            <p>За 15 минут поймёте, что именно вам предлагают и какие риски это несёт</p>
-          </div>
-          <div class="hero-card">
-            <p class="hero-card-title">План перехода</p>
-            <p>Пошаговая дорожная карта: от карго к белому ввозу</p>
-          </div>
-        </div>
 
       </div>
       <div class="hero-right">
         <div class="hero-photo">
           <img src="img/alexandra-cutout.png" alt="Александра Шумилова">
-          <p class="hero-author">Александра Шумилова<br>18&nbsp;лет в ВЭД с Китаем&nbsp;&middot;&nbsp;200+ клиентов</p>
         </div>
         <a href="https://t.me/AShumilova_bot?start=landing" class="btn hero-btn" target="_blank" style="gap:10px;margin-bottom:20px;">
           <svg style="width:24px;height:24px;fill:#000;" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
@@ -1824,6 +2033,28 @@ a { color: hsl(var(--primary)); text-decoration: none; }
         <p style="margin-top:8px;text-align:center;font-size:17px;margin-left:-180px;width:calc(100% + 140px);">
           <a href="#" class="open-popup-form" style="color:hsl(228 80% 70%);text-decoration:underline;text-underline-offset:4px;">Нет Telegram? Зарегистрироваться по&nbsp;email&nbsp;&rarr;</a>
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ БОНУСЫ ══════════ -->
+<section class="section-bonuses">
+  <div class="container">
+    <p class="bonuses-section-title">Три бонуса за регистрацию</p>
+    <div class="bonuses-grid">
+      <div class="hero-card">
+        <p class="hero-card-title">Чек-лист диагностики</p>
+        <p>7 блоков: поставщик, документы, логистика, таможня, оплата</p>
+      </div>
+      <div class="hero-card hero-card--highlight">
+        <span class="hero-card-badge">Сразу после регистрации</span>
+        <p class="hero-card-title">20 вопросов агенту / логисту</p>
+        <p>За 15 минут поймёте, что именно вам предлагают и какие риски это несёт</p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">План перехода</p>
+        <p>Пошаговая дорожная карта: от карго к белому ввозу</p>
       </div>
     </div>
   </div>
@@ -1877,7 +2108,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
 
       <div>
         <p class="expert-name">Александра Шумилова</p>
-        <p class="expert-meta">Основатель Intelligent Supply Chain Limited (Гонконг)</p>
+        <p class="expert-meta">Живёт в&nbsp;Китае&nbsp;&middot; Ведёт переговоры с&nbsp;фабриками прямо сейчас</p>
 
         <div class="expert-story">
           В 2014 году потеряла бизнес — партнёры предали, пришла в офис: ни документов, ни счетов, ни товара. В тот же день&nbsp;&mdash; налоговая, прокуратура, кредиторы. <strong>Уехала в Китай.</strong> Несколько лет работала переводчиком на китайских фабриках — видела изнутри, как оформляют (и не оформляют) документы, что значит «всё нормально» на самом деле. Из этого опыта выросла система.
@@ -2083,6 +2314,16 @@ a { color: hsl(var(--primary)); text-decoration: none; }
         <a href="#" class="open-popup-form" style="color:hsl(228 80% 70%);text-decoration:underline;text-underline-offset:4px;">Нет Telegram? Зарегистрироваться по&nbsp;email&nbsp;&rarr;</a>
       </p>
     </div>
+    <div class="format-note reveal">
+      <p class="format-note-label">О формате</p>
+      <p class="format-note-title">Это не вебинар</p>
+      <p class="format-note-body">Два дня живой работы — не лекции по слайдам, а разбор реальных ситуаций участников. Александра отвечает на ваши конкретные вопросы по вашему товару, вашей схеме, вашим поставщикам. Вы уходите с готовыми решениями, а не с конспектом.</p>
+      <ul class="format-note-list">
+        <li>Разбор вашей текущей схемы ввоза — что менять, что оставить</li>
+        <li>Ответы на вопросы по вашей нише и товарной группе</li>
+        <li>Практические шаги, которые можно применить сразу после воркшопа</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -2249,7 +2490,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
         <p class="notfor-title">✕ Не для вас, если</p>
         <ul class="notfor-list">
           <li>Ищете схему «возить дёшево и никому не объяснять» — мы работаем с официальными схемами</li>
-          <li>Хотите, чтобы кто-то сделал всё за вас — воркшоп даёт понимание, не сопровождение</li>
+          <li>Хотите, чтобы кто-то разобрался с импортом вместо вас — воркшоп даёт понимание и инструменты, не готовые решения под ключ</li>
           <li>Уже всё знаете и хотите проверить чужой контент</li>
           <li>Не готовы смотреть на свою схему честно — иногда результат диагностики неприятный</li>
         </ul>
@@ -2261,6 +2502,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <li>Хотите самостоятельно организовать белый ввоз и готовы глубоко вникать в тему</li>
           <li>Планируете переход на белый ввоз, но не понимаете с чего начать и сколько это стоит</li>
           <li>Покупали курсы по ВЭД, но так и не получили ощущение контроля</li>
+          <li>Хотите учиться у практика, который работает в&nbsp;Китае прямо сейчас — не&nbsp;по учебникам и&nbsp;не&nbsp;по опыту десятилетней давности</li>
         </ul>
       </div>
     </div>
@@ -2324,7 +2566,11 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <label for="regTelegram">Telegram <span class="optional">(необязательно)</span></label>
           <input type="text" id="regTelegram" name="telegram" placeholder="@username или номер">
         </div>
-        <button type="submit" class="btn reg-submit-btn" id="regSubmitBtn">Зарегистрироваться по email</button>
+        <div class="form-consent">
+          <input type="checkbox" id="regConsent" name="consent">
+          <label for="regConsent">Я соглашаюсь с <a href="https://whitewaychina.ru/politika-konfidentsialnosti" target="_blank" rel="noopener">Политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+        </div>
+        <button type="submit" class="btn reg-submit-btn" id="regSubmitBtn" disabled>Зарегистрироваться по email</button>
         <p class="form-note">Ваши данные в безопасности. Никакого спама.</p>
       </form>
 
@@ -2339,7 +2585,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     </div>
 
     <div class="final-note" style="margin-top:40px;">
-      <p>Это рабочая встреча, не вебинар с продажей. Если после захотите продолжить&nbsp;&mdash; расскажем. Если нет&nbsp;&mdash; уйдёте с инструментами.</p>
+      <p>Два дня — живая работа, не лекция. Разбираем реальные ситуации, отвечаем на вопросы. Уйдёте с конкретными инструментами для своего импорта.</p>
     </div>
   </div>
 </section>
@@ -2585,7 +2831,11 @@ a { color: hsl(var(--primary)); text-decoration: none; }
         <label for="popupTg">Telegram <span class="optional">(необязательно)</span></label>
         <input type="text" id="popupTg" name="telegram" placeholder="@username или номер">
       </div>
-      <button type="submit" class="btn reg-submit-btn" id="popupSubmitBtn">Зарегистрироваться по email</button>
+      <div class="form-consent">
+        <input type="checkbox" id="popupConsent" name="consent">
+        <label for="popupConsent">Я соглашаюсь с <a href="https://whitewaychina.ru/politika-konfidentsialnosti" target="_blank" rel="noopener">Политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+      </div>
+      <button type="submit" class="btn reg-submit-btn" id="popupSubmitBtn" disabled>Зарегистрироваться по email</button>
       <p class="form-note">Ваши данные в безопасности. Никакого спама.</p>
     </form>
 
@@ -2854,6 +3104,30 @@ function submitRegForm(formEl, btnEl, successEl) {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     submitRegForm(form, document.getElementById('popupSubmitBtn'), document.getElementById('popupSuccess'));
+  });
+})();
+</script>
+
+<script>
+// ── COOKIE BANNER ──
+(function(){
+  var banner=document.getElementById('cookieBanner');
+  if(!banner)return;
+  if(!localStorage.getItem('cookiesAccepted')){banner.style.display='flex';}
+  document.getElementById('cookieAccept').addEventListener('click',function(){
+    localStorage.setItem('cookiesAccepted','1');
+    banner.style.display='none';
+  });
+})();
+
+// ── CONSENT CHECKBOXES ──
+(function(){
+  var pairs=[{cb:'regConsent',btn:'regSubmitBtn'},{cb:'popupConsent',btn:'popupSubmitBtn'}];
+  pairs.forEach(function(p){
+    var cb=document.getElementById(p.cb);
+    var btn=document.getElementById(p.btn);
+    if(!cb||!btn)return;
+    cb.addEventListener('change',function(){btn.disabled=!cb.checked;});
   });
 })();
 </script>
