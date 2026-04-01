@@ -1802,41 +1802,23 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .hero-container { padding: 0 20px; }
   .container { padding: 0 20px; }
   .hero-inner { grid-template-columns: 1fr; gap: 0; min-height: auto; padding: 40px 0 0; }
-  /* Текст первым */
-  .hero-right { order: 1; margin-bottom: 0; align-self: center; padding-top: 0; margin-top: 0; }
-  /* Фото — скрыть на мобилке */
-  .hero-photo { display: none !important; }
-  /* Пиллы компактнее */
-  .hero-pills { gap: 6px; margin-bottom: 16px; padding-top: 0; justify-content: center; }
-  .hero-pill { font-size: 11px; padding: 6px 12px; }
-  /* Pretitle компактнее */
-  .hero-pretitle { font-size: 14px; margin-bottom: 10px; }
-  .hero-pretitle::before { width: 20px; }
-  /* H1 — крупный но вмещается */
-  .hero h1 { font-size: 32px; margin-bottom: 12px; line-height: 1.05; }
-  .hero h1 em { font-size: .65em; margin-top: 8px; }
-  /* Подпись эксперта компактная */
-  .hero-sub { font-size: 15px !important; margin-bottom: 12px !important; max-width: 100% !important; }
-  /* Буллеты компактнее */
-  .hero-benefits-title { font-size: 18px; margin-bottom: 8px; }
-  .hero-benefits { margin-bottom: 16px; }
-  .hero-benefits li { font-size: 15px; padding: 5px 0 5px 28px; line-height: 1.4; }
-  .hero-benefits li::before { width: 10px; height: 10px; top: 10px; }
-  /* Hero padding */
-  .hero-inner { padding: 24px 0 20px; }
-  /* Кнопка TG */
-  .hero-btn { width: 100% !important; margin-left: 0 !important; height: auto !important; padding: 16px 20px; font-size: 17px; margin-bottom: 8px !important; }
-  /* Ссылка email */
-  .hero-right p[style*="margin-left"] { margin-left: 0 !important; width: 100% !important; margin-top: 4px !important; }
+  .hero-right { order: -1; margin-bottom: 24px; align-self: center; padding-top: 0; margin-top: 0; }
+  .hero-photo { order: -1; text-align: center; margin-bottom: 12px; align-self: center; margin-left: 0 !important; }
+  .hero-photo img { max-width: 220px; width: 100% !important; margin: 0 auto !important; display: block; }
+  .hero-right p[style*="margin-left"] { margin-left: 0 !important; width: 100% !important; }
+  .hero-btn { width: 100% !important; margin-left: 0 !important; margin-right: 0; margin-bottom: 10px !important; height: auto !important; padding: 20px 16px; font-size: 18px; }
   .hero-tg-btn { width: 100% !important; margin-left: 0 !important; height: 60px !important; font-size: 16px !important; border-radius: 14px; }
   .hero-cards { max-width: 100%; flex-direction: column; }
   .hero-cards .hero-card:first-child,
   .hero-cards .hero-card.hero-card--highlight,
   .hero-card { flex: 1 1 auto !important; }
+  .hero-pretitle { font-size: 18px; }
   .hero::before { width: 280px; height: 280px; right: 50%; transform: translate(50%, -50%); top: 140px; }
   .hero::after { width: 255px; height: 255px; right: 50%; transform: translate(50%, -50%); top: 140px; }
-  /* Аватар эксперта — только мобилка */
-  .hero-expert-avatar { display: block !important; }
+  .hero h1 { font-size: 36px; }
+  .hero h1 em { font-size: .75em; }
+  .hero-sub { font-size: 18px; }
+  .hero-pills { justify-content: center; }
   .hero-cta-wrap { justify-content: center; }
   .hero-cards { flex-direction: column; }
   .hero-card { min-width: auto; }
@@ -1853,17 +1835,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
   .why-now-layout { grid-template-columns: 1fr; }
   .why-now-grid { grid-template-columns: 1fr; }
   .why-now-secret-text { padding: 20px 20px 0; }
-  .why-now-btn { margin: 16px 20px 20px !important; margin-left: 20px !important; margin-right: 20px !important; width: calc(100% - 40px) !important; padding: 16px 20px !important; font-size: 17px !important; box-sizing: border-box; white-space: normal !important; }
-  /* Bug fix: social proof strip overflow */
-  .social-proof { padding: 10px 8px !important; }
-  .social-proof div[style*="font-size:28px"] { font-size: 20px !important; }
-  .social-proof div[style*="font-size:12px"] { font-size: 10px !important; }
-  .social-proof > div[style*="padding:0 20px"] { padding: 0 10px !important; }
-  .social-proof > div[style*="padding:0 20px 0 0"] { padding: 0 10px 0 0 !important; }
-  .social-proof > div[style*="padding:0 0 0 20px"] { padding: 0 0 0 10px !important; }
-  /* Bug fix: flow images not centered */
-  .flow-images { flex-direction: column !important; align-items: center !important; }
-  .flow-images img { max-width: 100% !important; flex: none !important; }
+  .why-now-btn { margin: 16px 20px 20px; width: calc(100% - 40px); }
   .slider-prev { left: 4px; }
   .slider-next { right: 4px; }
   .reviews-slider { max-width: 100%; padding: 0 44px; overflow: hidden; }
@@ -2020,14 +1992,11 @@ a { color: hsl(var(--primary)); text-decoration: none; }
           <span class="hero-pill hero-pill--timer">Места <strong>ограничены</strong></span>
         </div>
 
-        <p class="hero-pretitle">Воркшоп 11–12 апреля · Zoom · Вход свободный</p>
-        <h1>Карго кончается —<br>что дальше?<em>За 2 дня у вас будет план перехода на белый ввоз — с цифрами, сроками и без остановки поставок</em></h1>
-        <div class="hero-expert-line" style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-          <img src="img/alexandra-cutout.png" alt="" class="hero-expert-avatar" style="width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;display:none;">
-          <p class="hero-sub" style="margin-bottom:0;font-size:22px;color:rgba(255,255,255,.85);font-style:normal;max-width:100%;">с&nbsp;Александрой Шумиловой — <strong style="color:hsl(43 85% 47%);font-weight:700;">10&nbsp;лет живёт в&nbsp;Китае</strong>, ведёт переговоры с&nbsp;фабриками прямо&nbsp;сейчас</p>
-        </div>
+        <p class="hero-pretitle">Бесплатный воркшоп 11–12 апреля</p>
+        <h1>Карго&nbsp;&rarr; белый ввоз<em>Перейти без штрафов, переплат и&nbsp;остановки поставок</em></h1>
+        <p class="hero-sub" style="margin-bottom:32px;font-size:22px;color:rgba(255,255,255,.85);font-style:normal;max-width:100%;">с&nbsp;Александрой Шумиловой — <strong style="color:hsl(43 85% 47%);font-weight:700;">10&nbsp;лет живёт в&nbsp;Китае</strong>, ведёт переговоры с&nbsp;фабриками прямо&nbsp;сейчас</p>
         <!-- SOCIAL PROOF STRIP -->
-        <div class="social-proof" style="display:flex;gap:0;margin-bottom:28px;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;align-items:center;justify-content:flex-start;">
+        <div style="display:flex;gap:0;margin-bottom:28px;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;align-items:center;justify-content:flex-start;">
           <div style="text-align:center;flex:0 0 auto;padding:0 20px 0 0;">
             <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#f0c040;line-height:1.1;">200+</div>
             <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;letter-spacing:.04em;text-transform:uppercase;">клиентов</div>
@@ -2217,7 +2186,7 @@ a { color: hsl(var(--primary)); text-decoration: none; }
     <h2 class="reveal" style="margin-top:120px;margin-bottom:8px;">Как выглядит белый ввоз — полная цепочка</h2>
     <p class="section-lead">10&nbsp;шагов от контракта до получения груза. На&nbsp;воркшопе разберём каждый — на&nbsp;вашем примере.</p>
 
-    <div class="reveal flow-images" style="display:flex;gap:24px;margin-top:32px;">
+    <div class="reveal" style="display:flex;gap:24px;margin-top:32px;">
       <img src="img/white-import-flow-1.png" alt="Белый ввоз: контракт → оплата → производство → проверка → маркировка" style="flex:1;max-width:50%;border-radius:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 24px rgba(0,0,0,0.3);" loading="lazy">
       <img src="img/white-import-flow-2.png" alt="Белый ввоз: экспорт → перевозка → таможня → доставка → получение" style="flex:1;max-width:50%;border-radius:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 24px rgba(0,0,0,0.3);" loading="lazy">
     </div>
